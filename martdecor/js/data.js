@@ -11,7 +11,7 @@ window.SECTIONS = [
 
 window.ITEMS = [
   {
-    id: "shangrila", section: "panels", name: "Гипсовое панно SHANGRILA", line: "Объёмное панно из гипса для акцентной стены",
+    id: "shangrila", styles: ["classic", "accent"], section: "panels", name: "Гипсовое панно SHANGRILA", line: "Объёмное панно из гипса для акцентной стены",
     price: 120960, unit: "₽/м²", status: "few", tags: ["гипс", "акцентная стена"],
     specs: [["Материал", "гипс"], ["Продажа", "за м²"]],
     pluses: ["Можно увидеть фактуру вживую в салоне", "Подходит для акцентной стены в гостиной или спальне"],
@@ -19,7 +19,7 @@ window.ITEMS = [
     source: "martdecor.ru, блок «Специальное предложение», 08.11.2026"
   },
   {
-    id: "bamboo", img: "img/sec-bamboo.jpg", section: "panels", name: "Стеновая бамбуковая панель WPC", line: "Эко-тренд в интерьере: бамбук на композитной основе",
+    id: "bamboo", styles: ["nature"], img: "img/sec-bamboo.jpg", section: "panels", name: "Стеновая бамбуковая панель WPC", line: "Эко-тренд в интерьере: бамбук на композитной основе",
     price: 15400, unit: "₽/шт", status: "in", tags: ["бамбук", "эко"],
     specs: [["Размер", "3000×1100×5 мм"], ["Материал", "WPC, бамбук"]],
     pluses: ["Есть в программе ланчей для дизайнеров"],
@@ -27,7 +27,7 @@ window.ITEMS = [
     source: "martdecor.ru, «Специальное предложение»; закреп ВК от 18 марта"
   },
   {
-    id: "eco", section: "panels", name: "ЭКО-панели из натуральных трав и цветов", line: "Луговые травы и цветы под прозрачным слоем",
+    id: "eco", styles: ["nature"], section: "panels", name: "ЭКО-панели из натуральных трав и цветов", line: "Луговые травы и цветы под прозрачным слоем",
     price: null, unit: "", status: "in", tags: ["натуральные", "эко"],
     specs: [["Материал", "натуральные травы и цветы"]],
     pluses: ["Натуральная фактура, которую не повторить печатью"],
@@ -35,7 +35,7 @@ window.ITEMS = [
     source: "Описание группы ВК; martdecor.ru, блок «Натуральные материалы»"
   },
   {
-    id: "flex", section: "panels", name: "Гибкие стеновые панели", line: "Для радиусных стен и колонн",
+    id: "flex", styles: ["modern"], section: "panels", name: "Гибкие стеновые панели", line: "Для радиусных стен и колонн",
     price: null, unit: "", status: "in", tags: ["радиусные стены"],
     specs: [["Применение", "радиусные стены"]],
     pluses: ["Решают задачу, где жёсткая панель не встанет"],
@@ -43,7 +43,7 @@ window.ITEMS = [
     source: "Закреп ВК «Ланчи по средам», 18 марта"
   },
   {
-    id: "diblack", section: "stone", name: "Каменный шпон «Ди-Блэк»", line: "Натуральный камень тонким листом",
+    id: "diblack", styles: ["nature"], section: "stone", name: "Каменный шпон «Ди-Блэк»", line: "Натуральный камень тонким листом",
     price: 23950, unit: "₽/шт", status: "few", tags: ["натуральный камень"],
     specs: [["Размер", "1220×2700 мм"], ["Материал", "натуральный каменный шпон"]],
     pluses: ["Фактура натурального камня", "Лист 1220×2700 мм"],
@@ -51,7 +51,7 @@ window.ITEMS = [
     source: "martdecor.ru, «Специальное предложение», 08.11.2026"
   },
   {
-    id: "hikari", section: "walls", name: "Текстильные обои Casamance Hikari", line: "Сизаль и флизелин, аппликации из хлопкового бархата",
+    id: "hikari", styles: ["classic"], section: "walls", name: "Текстильные обои Casamance Hikari", line: "Сизаль и флизелин, аппликации из хлопкового бархата",
     price: null, unit: "", status: "few", tags: ["текстиль", "Европа"],
     specs: [["Бренд", "Casamance"], ["Основа", "сизаль и флизелин"], ["Декор", "хлопковый бархат"]],
     pluses: ["«Одежда ваших стен» — фактура ткани на стене"],
@@ -67,7 +67,7 @@ window.ITEMS = [
     source: "Telegram @martdecorrostov, пост 1038"
   },
   {
-    id: "fresco", section: "walls", name: "Фрески и панно по вашему изображению", line: "Печать фрески с любого фото",
+    id: "fresco", styles: ["accent"], section: "walls", name: "Фрески и панно по вашему изображению", line: "Печать фрески с любого фото",
     price: null, unit: "", status: "in", tags: ["печать", "индивидуально"],
     specs: [["Изображение", "ваше или из каталога"]],
     pluses: ["«Распечатали огромную фреску с фото ночного города, качество хорошее, сроки выдачи соблюдены» — отзыв на Яндекс Картах"],
@@ -75,7 +75,7 @@ window.ITEMS = [
     source: "Описание группы ВК; отзыв Владимира Панюшкина, Яндекс Карты, 1.09.2025"
   },
   {
-    id: "charmant", section: "paint", name: "Краска Charmant Ultra, 1 л", line: "Интерьерная краска Loymina Group",
+    id: "charmant", styles: ["modern"], section: "paint", name: "Краска Charmant Ultra, 1 л", line: "Интерьерная краска Loymina Group",
     price: 4900, unit: "₽/шт", status: "in", tags: ["краска"],
     specs: [["Объём", "1 л"], ["Производитель", "Loymina Group"]],
     pluses: ["Подбор оттенка в салоне по образцам"],
@@ -83,7 +83,7 @@ window.ITEMS = [
     source: "martdecor.ru, «Специальное предложение»; блог martdecor.online"
   },
   {
-    id: "plaster", img: "img/sec-plaster.jpg", section: "paint", name: "Декоративная штукатурка", line: "Фактурные покрытия для стен",
+    id: "plaster", styles: ["accent"], img: "img/sec-plaster.jpg", section: "paint", name: "Декоративная штукатурка", line: "Фактурные покрытия для стен",
     price: null, unit: "", status: "in", tags: ["штукатурка"],
     specs: [["Подбор", "по образцам в салоне"]],
     pluses: ["«Консультанту огромное спасибо — подсказала подходящий оттенок» — отзыв на Яндекс Картах"],
@@ -91,7 +91,7 @@ window.ITEMS = [
     source: "Описание группы ВК; отзыв Кирилла Резникова, Яндекс Карты, 11.12.2025"
   },
   {
-    id: "poly", section: "lepnina", name: "Лепной декор из полиуретана и дюрополимера", line: "Карнизы, молдинги, наличники, розетки",
+    id: "poly", styles: ["classic"], section: "lepnina", name: "Лепной декор из полиуретана и дюрополимера", line: "Карнизы, молдинги, наличники, розетки",
     price: null, unit: "", status: "in", tags: ["полиуретан", "дюрополимер"],
     specs: [["Бренды", "Orac decor, NMC, Ultrawood, Eurowood, Rodecor, Европласт, Decomaster, Decor-Dizayn, BelloDeco, HI WOOD"], ["Материалы", "полиуретан, дюрополимер, композит, полистирол, МДФ"]],
     pluses: ["Десять брендов в одном салоне — можно сравнить вживую"],
@@ -107,7 +107,7 @@ window.ITEMS = [
     source: "Описание группы ВК"
   },
   {
-    id: "shadow", section: "light", name: "Скрытое освещение и теневые профили", line: "Подсветка ниш, потолка и стен",
+    id: "shadow", styles: ["modern"], section: "light", name: "Скрытое освещение и теневые профили", line: "Подсветка ниш, потолка и стен",
     price: null, unit: "", status: "in", tags: ["свет", "профиль"],
     specs: [["Что входит", "профили и скрытая подсветка"]],
     pluses: ["Подбираются вместе с панелями и лепниной — в одном заказе"],

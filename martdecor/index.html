@@ -1,196 +1,289 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FAF6F0">
 <title>МАРТдекор — интерьерный салон в Ростове-на-Дону</title>
+<link rel="icon" href="img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
-<header class="top over" id="top">
+<div class="topbar">
   <div class="wrap">
-    <a class="logo" href="index.html">Март<span>декор</span></a>
-    <nav class="nav">
+    <span><i class="ti ti-map-pin" aria-hidden="true"></i> Ростов-на-Дону, пр. Михаила Нагибина, 30Л · Дизайн-центр WEST</span>
+    <span><i class="ti ti-clock" aria-hidden="true"></i> Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00</span>
+    <span class="tb-right">
+      <a href="tel:+79094200420"><i class="ti ti-phone" aria-hidden="true"></i> +7 (909) 420-04-20</a>
+      <a href="https://wa.me/79094200420" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+      <a href="https://t.me/martdecorrostov" target="_blank" rel="noopener"><i class="ti ti-brand-telegram" aria-hidden="true"></i> Telegram</a>
+    </span>
+  </div>
+</div>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="МАРТдекор, на главную"><img src="img/logo-mark.png" alt="" width="54" height="39"><span><b>МАРТдекор</b><small>интерьерный салон</small></span></a>
+    <nav class="nav" id="nav" aria-label="Главное меню">
       <a href="#styles">Стили</a>
-      <a href="#materials">Материалы</a>
-      <a href="#podbor">Подбор</a>
+      <div class="dd">
+        <a href="catalog.html" class="dd-btn">Каталог <i class="ti ti-chevron-down" aria-hidden="true"></i></a>
+        <div class="dd-menu">
+          <a href="catalog.html?s=lepnina">Лепной декор</a>
+          <a href="catalog.html?s=panels">Стеновые панели</a>
+          <a href="catalog.html?s=stone">Каменный шпон</a>
+          <a href="catalog.html?s=walls">Обои и&nbsp;фрески</a>
+          <a href="catalog.html?s=paint">Краски и&nbsp;штукатурки</a>
+          <a href="catalog.html?s=light">Свет и&nbsp;профили</a>
+          <a href="catalog.html" class="all">Весь каталог →</a>
+        </div>
+      </div>
+      <a href="#prices">Цены</a>
       <a href="#pro">Дизайнерам</a>
-      <a href="#visit">Салон</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#visit">Контакты</a>
+      <a href="#faq">Вопросы</a>
+      <a class="nav-phone" href="tel:+79094200420"><i class="ti ti-phone" aria-hidden="true"></i> +7 (909) 420-04-20</a>
     </nav>
-    <a class="phone" href="tel:+79094200420">+7 (909) 420-04-20</a>
-    <a class="btn sm" href="#podbor">Подбор</a>
+    <a class="btn sm cta" href="#podbor" data-form>Подбор по&nbsp;фото</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><i class="ti ti-menu-2" aria-hidden="true"></i></button>
   </div>
 </header>
 
-<section class="hero3">
+<main>
+<section class="hero">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Интерьерный салон · <span style="white-space:nowrap">Ростов-на-Дону</span></span>
-      <h1>Стены, <em>которые хочется</em> трогать</h1>
-      <p class="lead">Лепнина, панели, каменный шпон, обои и&nbsp;краски в&nbsp;одном салоне. Пришлите фото комнаты или&nbsp;проект&nbsp;— соберём материалы, которые сочетаются, и&nbsp;посчитаем количество.</p>
-      <div class="actions">
-        <a class="btn" href="#podbor"><i class="ti ti-photo"></i> Прислать фото на&nbsp;подбор</a>
-        <a class="btn ghost" href="#styles">Смотреть стили</a>
-      </div>
-      <div class="facts">
-        <div><b>6 часов</b><span>на&nbsp;подбор материалов</span></div>
-        <div><b>5,0</b><span>на&nbsp;Яндекс Картах, 38 оценок</span></div>
-        <div><b>10</b><span>брендов лепного декора</span></div>
+    <div class="hero-box">
+      <img class="hero-bg" src="img/hero-interior.jpg" alt="Гостиная со стеновыми рейками, гипсовыми арками и встроенной подсветкой" fetchpriority="high">
+      <div class="hero-txt">
+        <span class="eyebrow">Салон отделочных материалов в&nbsp;Ростове-на-Дону</span>
+        <h1>Подберём материалы для&nbsp;стен <em>за&nbsp;6&nbsp;часов</em></h1>
+        <p class="lead">Пришлите фото комнаты или&nbsp;проект&nbsp;— соберём лепнину, панели, обои и&nbsp;краски, которые сочетаются, и&nbsp;посчитаем количество.</p>
+        <div class="actions">
+          <a class="btn" href="#podbor" data-form><i class="ti ti-photo" aria-hidden="true"></i> Прислать фото на&nbsp;подбор</a>
+          <a class="link" href="catalog.html">Смотреть каталог <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
-    <div class="pics">
-      <img class="a" src="img/style-nature.jpg" alt="Гостиная с каменной стеной и деревянными панелями">
-      <img class="b" src="img/style-classic.jpg" alt="Гостиная в мягкой классике с лепниной">
-      <div class="tag"><div><b>6</b>часов<br>на&nbsp;подбор</div></div>
+    <div class="facts">
+      <div><b>6&nbsp;часов</b><span>на&nbsp;подбор всех материалов для&nbsp;стен</span></div>
+      <div><b>5,0</b><span>на&nbsp;Яндекс Картах, 38&nbsp;оценок</span></div>
+      <div><b>10</b><span>брендов лепного декора в&nbsp;одном салоне</span></div>
+      <div><b>Образцы</b><span>можно потрогать вживую в&nbsp;салоне</span></div>
     </div>
   </div>
 </section>
-
-<div class="ticker" aria-hidden="true">
-  <div class="run">
-    <span>Лепной декор</span><span>Гипсовые 3D-панели</span><span>Каменный шпон</span><span>Бамбуковые панели</span><span>Текстильные обои</span><span>Фрески по&nbsp;фото</span><span>Декоративная штукатурка</span><span>Теневые профили</span>
-    <span>Лепной декор</span><span>Гипсовые 3D-панели</span><span>Каменный шпон</span><span>Бамбуковые панели</span><span>Текстильные обои</span><span>Фрески по&nbsp;фото</span><span>Декоративная штукатурка</span><span>Теневые профили</span>
-  </div>
-</div>
 
 <section id="styles">
   <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Подбор по&nbsp;стилю</span><h2>Какой интерьер вам&nbsp;ближе?</h2></div><p>Нажмите на&nbsp;стиль&nbsp;— покажем, из&nbsp;каких материалов он&nbsp;собирается.</p></div>
-    <div class="styles3">
-      <div class="tabs" id="tabs">
-        <button class="tab on" data-i="0"><span class="n">01</span><h3>Современный минимализм</h3><div class="mt">Спокойные стены и&nbsp;точный свет.<ul><li>Архитектурная краска</li><li>Теневые профили</li><li>Гибкие панели</li></ul><a href="catalog.html?s=paint">Материалы стиля →</a></div></button>
-        <button class="tab" data-i="1"><span class="n">02</span><h3>Мягкая классика</h3><div class="mt">Лепнина и&nbsp;фактура ткани.<ul><li>Карнизы и&nbsp;молдинги</li><li>Текстильные обои</li><li>Гипсовые панно</li></ul><a href="catalog.html?s=lepnina">Материалы стиля →</a></div></button>
-        <button class="tab" data-i="2"><span class="n">03</span><h3>Природные фактуры</h3><div class="mt">Камень, дерево, травы.<ul><li>Каменный шпон</li><li>Бамбуковые панели</li><li>Эко-панели из&nbsp;трав</li></ul><a href="catalog.html?s=stone">Материалы стиля →</a></div></button>
-        <button class="tab" data-i="3"><span class="n">04</span><h3>Акцентная стена</h3><div class="mt">Одна стена, которая держит весь&nbsp;интерьер.<ul><li>Фрески по&nbsp;фото</li><li>3D-панели из&nbsp;гипса</li><li>Декоративная штукатурка</li></ul><a href="catalog.html?s=walls">Материалы стиля →</a></div></button>
+    <div class="styles">
+      <div class="intro">
+        <div>
+          <span class="eyebrow">Подбор по&nbsp;стилю</span>
+          <h2>Какой интерьер вам&nbsp;ближе?</h2>
+        </div>
+        <p>Нажмите на&nbsp;стиль&nbsp;— покажем, из&nbsp;каких материалов он&nbsp;собирается.</p>
       </div>
-      <div class="stage" id="stage">
-        <img class="on" src="img/style-modern.jpg" alt="Современный минимализм">
-        <img src="img/style-classic.jpg" alt="Мягкая классика" loading="lazy">
-        <img src="img/style-nature.jpg" alt="Природные фактуры" loading="lazy">
-        <img src="img/style-accent.jpg" alt="Акцентная стена" loading="lazy">
-        <span class="cap">Иллюстрация с&nbsp;сайта martdecor.online</span>
+      <div class="style-cards" role="tablist" aria-label="Стили интерьера" id="tabs">
+        <button class="scard" role="tab" id="t0" aria-controls="p0" aria-selected="false" tabindex="-1"><img src="img/style-modern.jpg" alt=""><span class="cap">Современный минимализм<span class="circle"><i class="ti ti-arrow-right" aria-hidden="true"></i></span></span></button>
+        <button class="scard" role="tab" id="t1" aria-controls="p1" aria-selected="true"><img src="img/style-classic.jpg" alt=""><span class="cap">Мягкая классика<span class="circle"><i class="ti ti-arrow-right" aria-hidden="true"></i></span></span></button>
+        <button class="scard" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><img src="img/style-nature.jpg" alt=""><span class="cap">Природные фактуры<span class="circle"><i class="ti ti-arrow-right" aria-hidden="true"></i></span></span></button>
+        <button class="scard" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><img src="img/style-accent.jpg" alt=""><span class="cap">Акцентная стена<span class="circle"><i class="ti ti-arrow-right" aria-hidden="true"></i></span></span></button>
       </div>
     </div>
+
+    <div class="style-panel" role="tabpanel" id="p0" aria-labelledby="t0" hidden>
+      <div class="txt"><h3>Современный минимализм</h3><p>Спокойные стены и&nbsp;точный свет.</p><a class="btn" href="catalog.html?st=modern">Материалы стиля <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <ul class="mats">
+        <li><a href="catalog.html?s=paint"><img src="img/paint-still.jpg" alt="" loading="lazy"><span>Архитектурная краска</span></a></li>
+        <li><a href="catalog.html?s=light"><img src="img/sec-light.jpg" alt="" loading="lazy"><span>Теневые профили</span></a></li>
+        <li><a href="item.html?id=flex"><img src="img/sec-colorpanels.jpg" alt="" loading="lazy"><span>Гибкие панели</span></a></li>
+      </ul>
+    </div>
+    <div class="style-panel" role="tabpanel" id="p1" aria-labelledby="t1">
+      <div class="txt"><h3>Мягкая классика</h3><p>Лепнина и&nbsp;фактура ткани.</p><a class="btn" href="catalog.html?st=classic">Материалы стиля <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <ul class="mats">
+        <li><a href="catalog.html?s=lepnina"><img src="img/style-classic.jpg" alt="" loading="lazy"><span>Карнизы и&nbsp;молдинги</span></a></li>
+        <li><a href="item.html?id=hikari"><img src="img/sec-walls.jpg" alt="" loading="lazy"><span>Текстильные обои</span></a></li>
+        <li><a href="item.html?id=shangrila"><img src="img/sec-gypsum.jpg" alt="" loading="lazy"><span>Гипсовые панно</span></a></li>
+      </ul>
+    </div>
+    <div class="style-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+      <div class="txt"><h3>Природные фактуры</h3><p>Камень, дерево, травы.</p><a class="btn" href="catalog.html?st=nature">Материалы стиля <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <ul class="mats">
+        <li><a href="item.html?id=diblack"><img src="img/sec-stone.jpg" alt="" loading="lazy"><span>Каменный шпон</span></a></li>
+        <li><a href="item.html?id=bamboo"><img src="img/sec-bamboo.jpg" alt="" loading="lazy"><span>Бамбуковые панели</span></a></li>
+        <li><a href="item.html?id=eco"><img src="img/panel-terracotta.jpg" alt="" loading="lazy"><span>Эко-панели из&nbsp;трав</span></a></li>
+      </ul>
+    </div>
+    <div class="style-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+      <div class="txt"><h3>Акцентная стена</h3><p>Одна стена, которая держит весь&nbsp;интерьер.</p><a class="btn" href="catalog.html?st=accent">Материалы стиля <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <ul class="mats">
+        <li><a href="item.html?id=fresco"><img src="img/fresco-hand.jpg" alt="" loading="lazy"><span>Фрески по&nbsp;фото</span></a></li>
+        <li><a href="item.html?id=shangrila"><img src="img/sec-gypsum.jpg" alt="" loading="lazy"><span>3D-панели из&nbsp;гипса</span></a></li>
+        <li><a href="item.html?id=plaster"><img src="img/sec-plaster.jpg" alt="" loading="lazy"><span>Декоративная штукатурка</span></a></li>
+      </ul>
+    </div>
+    <p class="note">Иллюстрации с&nbsp;сайта martdecor.online&nbsp;— в&nbsp;работе заменим на&nbsp;фото ваших материалов и&nbsp;объектов.</p>
   </div>
 </section>
 
-<section id="materials" style="padding-top:0">
+<section id="materials">
   <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Материалы</span><h2>Всё для&nbsp;стен и&nbsp;потолка</h2></div><a class="btn ghost" href="catalog.html">Весь&nbsp;каталог <i class="ti ti-arrow-right"></i></a></div>
+    <div class="sec-head">
+      <div><span class="eyebrow">Материалы</span><h2>Всё для&nbsp;стен и&nbsp;потолка</h2></div>
+      <a class="btn ghost" href="catalog.html">Весь&nbsp;каталог <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+    </div>
     <div class="tiles" id="tiles"></div>
   </div>
 </section>
 
-<section class="six" id="podbor">
+<section id="podbor">
   <div class="wrap">
-    <div>
-      <div class="big">6<small>часов</small></div>
-      <h2 style="margin-top:36px">Пришлите идею&nbsp;— подборка займёт не&nbsp;больше 6 часов</h2>
-      <p class="lead">Подойдут фото комнаты, планировка, дизайн-проект, коллаж или&nbsp;картинка из&nbsp;интернета.</p>
-      <div class="channels" style="margin-top:24px">
-        <a class="btn ghost sm" href="https://wa.me/79094200420"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
-        <a class="btn ghost sm" href="https://t.me/martdecorrostov"><i class="ti ti-brand-telegram"></i> Telegram</a>
-      </div>
-    </div>
-    <form class="card">
-      <h3>Заявка на&nbsp;подбор</h3>
-      <label>Имя<input required placeholder="Как к вам обращаться"></label>
-      <label>Телефон<input required type="tel" placeholder="+7"></label>
-      <label>Что&nbsp;подбираем
-        <select><option>Материалы для&nbsp;всей комнаты</option><option>Акцентную стену</option><option>Лепной декор</option><option>Ищу материал, снятый с&nbsp;производства</option></select>
-      </label>
-      <div class="file"><i class="ti ti-upload"></i> Прикрепить фото или&nbsp;проект</div>
-      <button class="btn" type="submit">Получить подборку</button>
-      <div class="ok">Спасибо! Это&nbsp;прототип&nbsp;— заявка никуда не&nbsp;отправилась.</div>
-    </form>
-    <div class="steps">
-      <div class="step"><b>Идея</b><span>Фото, проект или&nbsp;картинка</span></div>
-      <div class="step"><b>Комплект</b><span>Материалы, которые сочетаются. Нет&nbsp;позиции&nbsp;— предложим замену</span></div>
-      <div class="step"><b>Расчёт</b><span>Количество и&nbsp;стоимость под&nbsp;ваш&nbsp;бюджет</span></div>
-      <div class="step"><b>Образцы</b><span>Цвет и&nbsp;фактура вживую в&nbsp;салоне</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Специальное предложение</span><h2>Позиции с&nbsp;ценой</h2></div><p>Количество ограничено. Остальные цены считаем под&nbsp;ваш&nbsp;проект.</p></div>
-    <div class="items rail" id="popular"></div>
-    <p class="demo-note">Наличие показано для&nbsp;примера. На&nbsp;карточках&nbsp;— фото раздела, в&nbsp;работе поставим фото самих позиций.</p>
-  </div>
-</section>
-
-<section class="pro" id="pro">
-  <img class="bgimg" src="img/panel-terracotta.jpg" alt="" loading="lazy">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Дизайнерам и&nbsp;мастерам</span>
-      <h2>Комплектуем ваши объекты</h2>
-      <p class="lead">Восемь из&nbsp;32 отзывов на&nbsp;Яндекс Картах написали дизайнеры и&nbsp;мастера, которые работают с&nbsp;салоном годами.</p>
-      <div class="brands"><span>Orac decor</span><span>NMC</span><span>Ultrawood</span><span>Eurowood</span><span>Rodecor</span><span>Европласт</span><span>Decomaster</span><span>Decor-Dizayn</span><span>BelloDeco</span><span>HI WOOD</span></div>
-      <p style="margin-top:24px"><span class="need">Нужно от&nbsp;вас: условия для&nbsp;дизайнеров</span></p>
-    </div>
-    <div class="cards">
-      <div class="c"><h3>Ланчи по&nbsp;средам, 14:00</h3><p>Новинки и&nbsp;тренды: гибкие и&nbsp;бамбуковые панели, декоративная штукатурка, обои с&nbsp;дофамином. Запись: <a href="tel:+79094210421">+7 (909) 421-04-21</a></p></div>
-      <div class="c"><h3>Семинары</h3><p>«Цвет под&nbsp;контролем» Сергея Трегубова, новые материалы AFFRESCO с&nbsp;печатью по&nbsp;эскизам.</p></div>
-      <div class="c"><h3>Расчёт по&nbsp;проекту</h3><p>Считаем материалы по&nbsp;чертежам и&nbsp;находим замену, если&nbsp;позицию сняли с&nbsp;производства.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Отзывы</span>
-    <div class="quotebox" style="margin-top:18px">
-      <div class="rating"><b>5,0</b><div class="stars">★★★★★</div><span>38 оценок на&nbsp;Яндекс Картах</span></div>
+    <div class="podbor">
       <div>
-        <div class="bigq" id="bigq"></div>
-        <div class="qnav"><button id="qprev" aria-label="Предыдущий отзыв"><i class="ti ti-arrow-left"></i></button><button id="qnext" aria-label="Следующий отзыв"><i class="ti ti-arrow-right"></i></button><span class="cnt" id="qcnt"></span></div>
+        <div class="intro">
+          <h2>Пришлите идею&nbsp;— подборка займёт не&nbsp;больше 6&nbsp;часов</h2>
+          <p class="lead">Подойдут фото комнаты, планировка, дизайн-проект, коллаж или&nbsp;картинка из&nbsp;интернета.</p>
+        </div>
+        <div class="more">
+          <div class="samples"><img src="img/fresco-hand.jpg" alt="Художник расписывает фреску с птицей и цветами" loading="lazy"></div>
+          <ol class="steps">
+            <li class="step"><b>Идея</b><span>Присылаете фото, проект или&nbsp;картинку&nbsp;— через форму, WhatsApp или&nbsp;Telegram.</span></li>
+            <li class="step"><b>Комплект</b><span>Консультант собирает материалы, которые сочетаются. Нет&nbsp;позиции&nbsp;— предложит замену.</span></li>
+            <li class="step"><b>Расчёт</b><span>Считаем количество и&nbsp;стоимость по&nbsp;размерам стен. На&nbsp;подбор&nbsp;— до&nbsp;6&nbsp;часов.</span></li>
+            <li class="step"><b>Образцы</b><span>Смотрите цвет и&nbsp;фактуру вживую в&nbsp;салоне или&nbsp;оформляете заказ удалённо.</span></li>
+          </ol>
+        </div>
+      </div>
+      <form class="form" id="form" novalidate>
+        <h3>Заявка на&nbsp;подбор</h3>
+        <label class="field"><span>Имя</span><input name="name" autocomplete="name" required placeholder="Как к&nbsp;вам обращаться"><em class="err">Напишите, как к&nbsp;вам обращаться</em></label>
+        <label class="field"><span>Телефон</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 (___) ___-__-__"><em class="err">Нужен номер, чтобы&nbsp;прислать подборку</em></label>
+        <label class="field"><span>Что&nbsp;подбираем</span>
+          <select name="task"><option>Материалы для&nbsp;всей комнаты</option><option>Акцентную стену</option><option>Лепной декор</option><option>Ищу материал, снятый с&nbsp;производства</option></select>
+        </label>
+        <label class="file"><i class="ti ti-paperclip" aria-hidden="true"></i><span>Прикрепить фото или&nbsp;проект</span><span class="name"></span><input type="file" name="file" accept="image/*,.pdf"></label>
+        <label class="agree-box"><input type="checkbox" name="agree" required><span>Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="https://martdecor.online/privacy-policy/" target="_blank" rel="noopener">политике конфиденциальности</a></span></label>
+        <em class="err agree-err">Отметьте согласие, чтобы&nbsp;отправить заявку</em>
+        <button class="btn" type="submit">Получить подборку <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+        <div class="result" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Специальное предложение</span><h2>Позиции с&nbsp;ценой</h2></div>
+      <p>Количество ограничено. Остальные цены считаем под&nbsp;ваш&nbsp;проект.</p>
+    </div>
+    <div class="items home" id="popular"></div>
+    <p class="note">На&nbsp;карточках&nbsp;— фото раздела, в&nbsp;работе поставим фото самих позиций.</p>
+  </div>
+</section>
+
+<section id="pro">
+  <div class="wrap">
+    <div class="pro">
+      <div class="pro-pic">
+        <img src="img/style-modern.jpg" alt="" loading="lazy">
+        <span class="need-photo"><i class="ti ti-camera" aria-hidden="true"></i> Нужно фото: дизайнеры на&nbsp;ланче или&nbsp;семинаре в&nbsp;салоне</span>
+      </div>
+      <div>
+        <span class="eyebrow">Дизайнерам и&nbsp;мастерам</span>
+        <h2>Соберём материалы по&nbsp;вашему проекту&nbsp;— вы&nbsp;занимаетесь дизайном</h2>
+        <p class="lead">Присылайте чертежи и&nbsp;ведомости: посчитаем объёмы, подберём аналоги снятых с&nbsp;производства позиций и&nbsp;покажем образцы вашему заказчику в&nbsp;салоне.</p>
+        <ul class="services">
+          <li><span class="ic"><i class="ti ti-coffee" aria-hidden="true"></i></span><div><h3>Ланчи по&nbsp;средам, 14:00</h3><p>Новинки и&nbsp;тренды: гибкие и&nbsp;бамбуковые панели, декоративная штукатурка, обои с&nbsp;дофамином. Запись: <a href="tel:+79094210421">+7 (909) 421-04-21</a></p></div></li>
+          <li><span class="ic"><i class="ti ti-presentation" aria-hidden="true"></i></span><div><h3>Семинары</h3><p>«Цвет под&nbsp;контролем» Сергея Трегубова, новые материалы AFFRESCO с&nbsp;печатью по&nbsp;эскизам.</p></div></li>
+          <li><span class="ic"><i class="ti ti-calculator" aria-hidden="true"></i></span><div><h3>Расчёт по&nbsp;проекту</h3><p>Считаем материалы по&nbsp;чертежам и&nbsp;находим замену, если&nbsp;позицию сняли с&nbsp;производства.</p></div></li>
+        </ul>
+        <div class="pro-acts">
+          <a class="btn" href="#podbor" data-form>Прислать проект на&nbsp;расчёт <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+          <a class="link" href="tel:+79094210421">Записаться на&nbsp;ланч <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <span class="need">Нужно от&nbsp;вас: условия для&nbsp;дизайнеров (скидка, агентское вознаграждение)</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="visit" id="visit">
+<section id="reviews">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Салон</span>
-      <h2>Приезжайте потрогать образцы</h2>
-      <dl>
-        <div><dt>Адрес</dt><dd>Ростов-на-Дону, пр. Михаила Нагибина, 30Л<br><span style="color:var(--muted);font-size:15px">Дизайн-центр WEST · остановка «Роствертол» в&nbsp;140 м</span></dd></div>
-        <div><dt>Режим работы</dt><dd>Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00 <span data-open class="open-now"></span></dd></div>
-        <div><dt>Телефон, WhatsApp, Telegram</dt><dd><a href="tel:+79094200420" style="text-decoration:none">+7 (909) 420-04-20</a></dd></div>
-      </dl>
-      <a class="btn" href="https://yandex.ru/maps/org/martdekor/192527386082/" target="_blank" rel="noopener"><i class="ti ti-route"></i> Построить маршрут</a>
+    <div class="reviews-head">
+      <div>
+        <span class="eyebrow">Отзывы</span>
+        <h2>Отзывы о&nbsp;салоне</h2>
+      </div>
+      <div class="rating"><b>5,0</b><div><div class="stars" aria-hidden="true"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div><span>38 оценок, 32 отзыва на&nbsp;Яндекс Картах</span></div></div>
+      <a class="btn ghost" href="https://yandex.ru/maps/org/martdekor/192527386082/reviews/" target="_blank" rel="noopener">Все отзывы на&nbsp;Яндекс Картах <i class="ti ti-external-link" aria-hidden="true"></i></a>
     </div>
-    <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=39.716998%2C47.255229&z=16&pt=39.716998,47.255229,pm2dgm" title="МАРТдекор на карте" loading="lazy"></iframe></div>
+    <div class="rgrid" id="reviews-grid"></div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="visit">
+      <div class="txt">
+        <span class="eyebrow">Салон</span>
+        <h2>Приезжайте выбрать образцы и&nbsp;подобрать цветовую гамму</h2>
+        <dl>
+          <div><dt>Адрес</dt><dd>Ростов-на-Дону, пр. Михаила Нагибина, 30Л<span class="sub">Дизайн-центр WEST · остановка «Роствертол» в&nbsp;140&nbsp;м</span></dd></div>
+          <div><dt>Режим работы</dt><dd>Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00<br><span data-open class="open-now"></span></dd></div>
+          <div><dt>Телефон, WhatsApp, Telegram</dt><dd><a href="tel:+79094200420">+7 (909) 420-04-20</a></dd></div>
+        </dl>
+        <a class="btn" href="https://yandex.ru/maps/org/martdekor/192527386082/" target="_blank" rel="noopener"><i class="ti ti-route" aria-hidden="true"></i> Построить маршрут</a>
+      </div>
+      <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?ll=39.716998%2C47.255229&z=16&pt=39.716998,47.255229,pm2dgm" title="МАРТдекор на карте: пр. Михаила Нагибина, 30Л" loading="lazy"></iframe></div>
+    </div>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Вопросы</span><h2>Отвечаем заранее</h2></div></div>
-    <div class="faq">
-      <details open><summary>Можно приехать со&nbsp;своим проектом или&nbsp;фото интерьера?</summary><p>Да.&nbsp;Подбираем по&nbsp;фото помещения, планировке, дизайн-проекту, коллажу или&nbsp;картинке из&nbsp;интернета.</p></details>
-      <details><summary>Посчитаете, сколько нужно материалов?</summary><p>Да,&nbsp;рассчитаем количество и&nbsp;стоимость по&nbsp;размерам стен или&nbsp;по&nbsp;проекту.</p></details>
-      <details><summary>Можно заказать, не&nbsp;приезжая в&nbsp;салон?</summary><p>Да,&nbsp;консультант объяснит всё удалённо, а&nbsp;заказ можно оформить дистанционно.</p></details>
-      <details><summary>Как&nbsp;оплатить и&nbsp;доставить?</summary><p><span class="need">Нужно от&nbsp;вас: условия оплаты и&nbsp;доставки</span></p></details>
+    <div class="faq-grid">
+      <div><span class="eyebrow">Вопросы</span><h2>Отвечаем заранее</h2></div>
+      <div class="faq">
+        <details open><summary>Можно приехать со&nbsp;своим проектом или&nbsp;фото интерьера?</summary><p>Да.&nbsp;Подбираем по&nbsp;фото помещения, планировке, дизайн-проекту, коллажу или&nbsp;картинке из&nbsp;интернета.</p></details>
+        <details><summary>Посчитаете, сколько нужно материалов?</summary><p>Да,&nbsp;рассчитаем количество и&nbsp;стоимость по&nbsp;размерам стен или&nbsp;по&nbsp;проекту.</p></details>
+        <details><summary>Можно заказать, не&nbsp;приезжая в&nbsp;салон?</summary><p>Да,&nbsp;консультант объяснит всё удалённо, а&nbsp;заказ можно оформить дистанционно.</p></details>
+        <details><summary>Как&nbsp;оплатить и&nbsp;доставить?</summary><p><span class="need">Нужно от&nbsp;вас: условия оплаты и&nbsp;доставки</span></p></details>
+      </div>
     </div>
   </div>
 </section>
+</main>
 
 <footer class="site">
   <div class="wrap">
-    <div><a class="logo" href="index.html">Март<span>декор</span></a><p style="margin-top:14px">Интерьерный салон в&nbsp;Ростове-на-Дону. Современные материалы для&nbsp;декорирования интерьера.</p></div>
+    <div><a class="logo light" href="index.html" aria-label="МАРТдекор, на главную"><img src="img/logo-mark.png" alt="" width="54" height="39"><span><b>МАРТдекор</b><small>интерьерный салон</small></span></a><p>Интерьерный салон в&nbsp;Ростове-на-Дону. Современные материалы для&nbsp;декорирования интерьера.</p></div>
     <div><h4>Материалы</h4><a href="catalog.html?s=lepnina">Лепной декор</a><a href="catalog.html?s=panels">Стеновые панели</a><a href="catalog.html?s=walls">Обои и&nbsp;фрески</a><a href="catalog.html?s=paint">Краски и&nbsp;штукатурки</a></div>
     <div><h4>Салон</h4><a href="#podbor">Подбор</a><a href="#pro">Дизайнерам</a><a href="#faq">Вопросы</a><a href="#visit">Контакты</a></div>
-    <div><h4>Связаться</h4><a href="tel:+79094200420">+7 (909) 420-04-20</a><a href="https://t.me/martdecorrostov">Telegram</a><a href="https://vk.ru/martdecoronline">ВКонтакте</a></div>
-    <div class="proto">Прототип сайта для&nbsp;обсуждения, вариант 4. Иллюстрации взяты с&nbsp;сайта martdecor.online, в&nbsp;работе заменим их&nbsp;на&nbsp;фото салона и&nbsp;ваших объектов. Наличие показано для&nbsp;примера, формы ничего не&nbsp;отправляют. Данные&nbsp;— из&nbsp;открытых источников салона на&nbsp;8 ноября 2026. Прототип: Ирина Бовдуй.</div>
+    <div><h4>Связаться</h4><a href="tel:+79094200420">+7 (909) 420-04-20</a><a href="mailto:info@martdecor.ru">info@martdecor.ru</a><div class="soc"><a href="https://t.me/martdecorrostov" aria-label="Telegram"><i class="ti ti-brand-telegram" aria-hidden="true"></i></a><a href="https://wa.me/79094200420" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a><a href="https://vk.ru/martdecoronline" aria-label="ВКонтакте"><i class="ti ti-brand-vk" aria-hidden="true"></i></a></div></div>
+  </div>
+  <div class="legal">
+    <div class="wrap">
+      <div class="req">
+        <h4>Правовая информация</h4>
+        <p>ИП&nbsp;Арийская Людмила Руслановна · ИНН&nbsp;231129240301 · ОГРНИП&nbsp;319619600052602</p>
+        <p>Ростов-на-Дону, пр. Михаила Нагибина, 30Л · <a href="mailto:info@martdecor.ru">info@martdecor.ru</a></p>
+      </div>
+      <div class="docs">
+        <a href="https://martdecor.online/privacy-policy/" target="_blank" rel="noopener">Политика конфиденциальности</a>
+        <span class="need">Нужно от&nbsp;вас: текст согласия на&nbsp;обработку персональных данных</span>
+        <span>Информация на&nbsp;сайте не&nbsp;является публичной офертой. Цены и&nbsp;наличие уточняйте у&nbsp;консультанта.</span>
+      </div>
+      <div class="proto">© 2018–2026 МАРТдекор. Прототип сайта для&nbsp;обсуждения, вариант 9. Иллюстрации взяты с&nbsp;сайта martdecor.online, в&nbsp;работе заменим их&nbsp;на&nbsp;фото салона и&nbsp;ваших объектов. Отправка заявок с&nbsp;сайта не&nbsp;подключена. Прототип: Ирина Бовдуй.</div>
+    </div>
   </div>
 </footer>
 
