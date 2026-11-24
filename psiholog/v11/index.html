@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="ru" data-theme="terracotta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Донмаз Буглуев - психолог</title>
+<meta name="description" content="Донмаз Буглуев, психолог. Краснодар и онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root, [data-theme="terracotta"] {
+  --bg: #F5EFE7; --surface: #FBF8F3; --ink: #2B2420; --muted: #6A5E56;
+  --line: #E2D8CC; --accent: #A15A3A; --accent-hover: #8A4A2E; --accent-soft: #EBDACC; --on-accent: #fff;
+}
+[data-theme="sage"] {
+  --bg: #EEF0E8; --surface: #F7F8F3; --ink: #232822; --muted: #5A6157;
+  --line: #D6DBCC; --accent: #5A6D54; --accent-hover: #485943; --accent-soft: #DAE2D0; --on-accent: #fff;
+}
+[data-theme="mist"] {
+  --bg: #ECEFF1; --surface: #F6F8F9; --ink: #1F2A31; --muted: #56646E;
+  --line: #D2DAE0; --accent: #4B6B7E; --accent-hover: #3B5767; --accent-soft: #D5E0E7; --on-accent: #fff;
+}
+[data-theme="lavender"] {
+  --bg: #F1EDF1; --surface: #F9F7F9; --ink: #2A2430; --muted: #645B6B;
+  --line: #DFD6E0; --accent: #765B83; --accent-hover: #61496C; --accent-soft: #E6DCE9; --on-accent: #fff;
+}
+:root {
+  --serif: "Prata", Georgia, serif;
+  --sans: "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap: 1180px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 14px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 17px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .5s var(--ease), color .5s var(--ease);
+}
+::selection { background: var(--accent); color: var(--on-accent); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.ph { text-decoration: underline dotted var(--accent); text-underline-offset: 5px; text-decoration-thickness: 1.5px; }
+.icon { width: 22px; height: 22px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Плашка прототипа */
+.proto-bar { background: var(--ink); color: var(--bg); font-size: 13px; text-align: center; padding: 8px var(--gutter); }
+.proto-bar .ph { text-decoration-color: currentColor; }
+
+/* Шапка */
+.header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: saturate(1.2) blur(10px); border-bottom: 1px solid var(--line); transition: background-color .5s var(--ease); }
+.header .wrap { display: flex; align-items: center; gap: 32px; height: 72px; }
+.logo { font-family: var(--serif); font-size: 22px; text-decoration: none; white-space: nowrap; }
+.logo small { display: block; font: 400 12px/1.2 var(--sans); color: var(--muted); letter-spacing: .02em; }
+.nav { display: flex; gap: 28px; margin-left: auto; font-size: 15px; }
+.nav a { text-decoration: none; color: var(--muted); transition: color .2s; }
+.nav a:hover { color: var(--ink); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 26px; border-radius: 10px; border: 1px solid transparent;
+  font: 500 16px/1 var(--sans); text-decoration: none; cursor: pointer;
+  background: var(--accent); color: var(--on-accent);
+  transition: background-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.btn:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 20px -10px color-mix(in srgb, var(--accent) 70%, transparent); }
+.btn:active { transform: translateY(0); }
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn--ghost:hover { background: var(--surface); border-color: var(--accent); box-shadow: none; }
+.btn--sm { min-height: 42px; padding: 0 18px; font-size: 15px; }
+.burger { display: none; margin-left: auto; background: none; border: 0; color: var(--ink); padding: 8px; cursor: pointer; }
+
+/* Первый экран */
+.hero { padding: clamp(40px, 7vw, 88px) 0 clamp(40px, 5vw, 64px); }
+.hero .wrap { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero__place { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 15px; margin-bottom: 22px; }
+.hero__place .icon { width: 18px; height: 18px; }
+.hero h1 { font-size: clamp(34px, 4.2vw, 58px); margin-bottom: 24px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero__lead { font-size: clamp(17px, 1.5vw, 19px); color: var(--muted); max-width: 33em; margin-bottom: 34px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
+.link-arrow { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 500; }
+.link-arrow .icon { transition: transform .3s var(--ease); }
+.link-arrow:hover .icon { transform: translateX(4px); }
+
+.portrait { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--radius) var(--radius); background: var(--accent-soft); overflow: hidden; display: grid; place-items: center; transition: background-color .5s var(--ease); }
+.portrait::before { content: ""; position: absolute; inset: 14px; border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: inherit; }
+.portrait__note { position: relative; text-align: center; color: var(--muted); font-size: 15px; display: grid; gap: 12px; justify-items: center; padding: 24px; }
+.portrait__note .icon { width: 40px; height: 40px; color: var(--accent); stroke-width: 1.2; }
+.portrait__badge { position: absolute; left: -18px; bottom: 36px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; font-size: 14px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.35); display: flex; gap: 12px; align-items: center; max-width: 250px; }
+.portrait__badge .icon { color: var(--accent); }
+.portrait-wrap { position: relative; }
+
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: clamp(40px, 6vw, 72px); }
+.fact { display: flex; gap: 14px; align-items: center; padding: 22px 20px; font-size: 15px; color: var(--muted); }
+.fact + .fact { border-left: 1px solid var(--line); }
+.fact b { display: block; font: 400 22px/1.2 var(--serif); color: var(--ink); }
+.fact .icon { color: var(--accent); width: 26px; height: 26px; }
+
+/* Секции */
+section { padding: clamp(56px, 8vw, 112px) 0; }
+.section-head { max-width: 760px; margin-bottom: clamp(32px, 4vw, 52px); }
+.section-head h2 { font-size: clamp(30px, 3.6vw, 46px); margin-bottom: 16px; }
+.section-head p { color: var(--muted); font-size: 18px; }
+.band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background-color .5s var(--ease); }
+
+/* Запросы */
+.requests { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+.req { display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding: 28px 0; border-top: 1px solid var(--line); }
+.req__icon { width: 52px; height: 52px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; transition: background-color .5s var(--ease); }
+.req h3 { font-size: 22px; margin-bottom: 8px; }
+.req p { color: var(--muted); font-size: 16px; }
+.requests-note { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; align-items: center; }
+.requests-note p { font-family: var(--serif); font-size: 22px; max-width: 30em; }
+
+/* Как проходит работа */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 48px); counter-reset: step; }
+.step { position: relative; padding-top: 72px; }
+.step::before { counter-increment: step; content: counter(step); position: absolute; top: 0; left: 0; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); display: grid; place-items: center; font: 400 20px/1 var(--serif); }
+.step::after { content: ""; position: absolute; top: 24px; left: 64px; right: -24px; height: 1px; background: var(--line); }
+.step:last-child::after { display: none; }
+.step h3 { font-size: 24px; margin-bottom: 10px; }
+.step p { color: var(--muted); }
+.formats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+.chip { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; font-size: 15px; background: var(--bg); }
+.chip .icon { width: 18px; height: 18px; color: var(--accent); }
+
+/* Обо мне + цена */
+.about { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.about__text p { font-size: 18px; margin-bottom: 18px; max-width: 36em; }
+.about__text p.big { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 28px); line-height: 1.35; margin-bottom: 28px; }
+.creds { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 0; }
+.creds li { display: flex; gap: 16px; align-items: center; padding: 16px 0; border-top: 1px solid var(--line); color: var(--muted); }
+.creds .icon { color: var(--accent); }
+.price { position: sticky; top: 100px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 3vw, 36px); transition: background-color .5s var(--ease); }
+.price h3 { font-size: 30px; margin-bottom: 6px; }
+.price__sum { font-family: var(--serif); font-size: 26px; color: var(--accent); margin-bottom: 22px; }
+.price ul { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 12px; font-size: 16px; color: var(--muted); }
+.price li { display: flex; gap: 12px; align-items: center; }
+.price li .icon { width: 19px; height: 19px; color: var(--accent); }
+.price .btn { width: 100%; }
+.price__hint { margin-top: 14px; font-size: 14px; color: var(--muted); text-align: center; }
+
+/* Отзывы */
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 40px); }
+.review { border-top: 1px solid var(--accent); padding-top: 24px; }
+.review blockquote { margin: 0 0 18px; font-family: var(--serif); font-size: 20px; line-height: 1.45; }
+.review cite { font-style: normal; color: var(--muted); font-size: 15px; }
+
+/* Вопросы */
+.faq { max-width: 860px; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 24px 48px 24px 0; position: relative; font-family: var(--serif); font-size: clamp(19px, 1.8vw, 22px); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 12px; height: 12px; border-right: 1.5px solid var(--accent); border-bottom: 1.5px solid var(--accent); transform: translateY(-75%) rotate(45deg); transition: transform .35s var(--ease); }
+.faq details[open] summary::after { transform: translateY(-25%) rotate(-135deg); }
+.faq details p { color: var(--muted); padding: 0 48px 26px 0; max-width: 62ch; }
+
+/* Запись */
+.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.messengers { display: grid; gap: 12px; margin-top: 32px; }
+.msg { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; background: var(--bg); transition: border-color .25s, transform .25s var(--ease), background-color .5s var(--ease); }
+.msg:hover { border-color: var(--accent); transform: translateX(4px); }
+.msg__icon { width: 44px; height: 44px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex: none; font: 600 12px/1 var(--sans); letter-spacing: .02em; }
+.msg b { display: block; font-weight: 500; }
+.msg span { color: var(--muted); font-size: 14px; }
+.msg .icon.arrow { margin-left: auto; color: var(--muted); }
+
+.form { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 3vw, 40px); transition: background-color .5s var(--ease); }
+.form h3 { font-size: 28px; margin-bottom: 8px; }
+.form > p { color: var(--muted); margin-bottom: 26px; }
+.field { display: grid; gap: 8px; margin-bottom: 18px; }
+.field label, .field legend { font-size: 14px; font-weight: 500; }
+.field input, .field textarea {
+  width: 100%; font: 400 17px/1.4 var(--sans); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px;
+  transition: border-color .2s, box-shadow .2s; caret-color: var(--accent);
+}
+.field textarea { min-height: 96px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.field.error input { border-color: #B3261E; }
+.field .err { color: #B3261E; font-size: 14px; display: none; }
+.field.error .err { display: block; }
+fieldset.field { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
+.ways { display: flex; flex-wrap: wrap; gap: 8px; }
+.ways input { position: absolute; opacity: 0; pointer-events: none; }
+.ways label { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-size: 15px; font-weight: 400; background: var(--surface); transition: all .2s; }
+.ways input:checked + label { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.ways input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+.consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--muted); margin: 6px 0 22px; }
+.consent input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent); flex: none; }
+.form .btn { width: 100%; }
+.form .btn[disabled] { opacity: .6; cursor: wait; transform: none; }
+.form-ok { display: none; text-align: center; padding: 40px 10px; }
+.form-ok .icon { width: 48px; height: 48px; color: var(--accent); margin: 0 auto 16px; }
+.form-ok h3 { margin-bottom: 10px; }
+.form-ok p { color: var(--muted); }
+.form.sent .form-body { display: none; }
+.form.sent .form-ok { display: block; }
+
+/* Подвал */
+.footer { padding: 40px 0 120px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+
+/* Выбор цвета */
+.themer { position: fixed; right: 16px; bottom: 16px; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; box-shadow: 0 20px 44px -24px rgba(0,0,0,.45); transition: background-color .5s var(--ease); }
+.themer p { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.themer__list { display: flex; gap: 8px; }
+.themer button { display: grid; justify-items: center; gap: 4px; background: none; border: 0; padding: 0; cursor: pointer; font: 400 11px/1 var(--sans); color: var(--muted); }
+.themer i { width: 34px; height: 34px; border-radius: 50%; display: block; border: 2px solid transparent; outline: 1px solid var(--line); outline-offset: -1px; transition: transform .2s var(--ease); }
+.themer button:hover i { transform: scale(1.08); }
+.themer button[aria-pressed="true"] i { border-color: var(--ink); outline: none; }
+.themer button[aria-pressed="true"] { color: var(--ink); }
+
+/* Мобильная панель */
+.mobile-cta { display: none; }
+
+/* Появление */
+.reveal { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+@media (max-width: 960px) {
+  .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); flex-direction: column; gap: 0; padding: 8px var(--gutter) 16px; }
+  .nav.open { display: flex; }
+  .nav a { padding: 12px 0; font-size: 17px; }
+  .burger { display: block; }
+  .header .btn { display: none; }
+  .hero .wrap, .about, .contact { grid-template-columns: 1fr; }
+  .portrait-wrap { max-width: 420px; width: 100%; margin: 0 auto; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .fact:nth-child(3) { border-left: 0; }
+  .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .requests { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 0; }
+  .step { padding: 0 0 32px 72px; }
+  .step::after { top: 56px; bottom: 8px; left: 24px; right: auto; width: 1px; height: auto; }
+  .step:last-child::after { display: none; }
+  .reviews { grid-template-columns: 1fr; }
+  .price { position: static; }
+}
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .fact { padding: 16px 12px; gap: 10px; }
+  .fact b { font-size: 19px; }
+  .fact .icon { display: none; }
+  .portrait__badge { left: 8px; bottom: 16px; }
+  .themer { left: 8px; right: 8px; bottom: 76px;  display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; }
+  .themer p { margin: 0; }
+  .themer i { width: 28px; height: 28px; }
+  .mobile-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--line); }
+  .mobile-cta .btn { flex: 1; padding: 0 10px; }
+  .mobile-cta .btn--ghost { flex: 0 0 50px; padding: 0; }
+  .footer { padding-bottom: 180px; }
+}
+.todo { border: 1.5px dashed color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 10px; padding: 10px 14px; color: var(--muted); font-size: 15px; background: color-mix(in srgb, var(--accent-soft) 35%, transparent); display: inline-block; }
+.todo--block { display: block; padding: 18px 20px; }
+.todo--lead { display: block; max-width: 33em; margin-bottom: 34px; font-size: 17px; }
+.todo-t { color: var(--muted); }
+.hero .wrap.wrap--plain { display: block; }
+.q, .q-chip { color: var(--muted); }
+.hero h1 em { display: block; font-size: .55em; margin-top: 10px; }
+.creds li .todo { padding: 6px 12px; }
+.review .todo--block { min-height: 120px; }
+.dr { text-decoration: underline dotted color-mix(in srgb, var(--accent) 70%, transparent); text-decoration-thickness: 1.5px; text-underline-offset: 6px; }
+.proto-bar .dr { text-decoration-color: currentColor; }
+.hero h1 em.dr { display: inline; font-size: inherit; margin: 0; }
+.notice { display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start; max-width: 900px; padding: clamp(24px, 3vw, 36px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: background-color .5s var(--ease); }
+.notice > .icon { width: 56px; height: 56px; padding: 14px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); }
+.notice h2 { font-size: clamp(24px, 2.4vw, 30px); margin-bottom: 10px; }
+.notice p { color: var(--muted); max-width: 62ch; }
+#important { padding: clamp(40px, 5vw, 64px) 0; }
+@media (max-width: 600px) { .notice { grid-template-columns: 1fr; gap: 14px; } }
+
+.book-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 3vw, 40px); transition: background-color .5s var(--ease); }
+.book-card h3 { font-size: 28px; margin-bottom: 8px; }
+.book-card p { color: var(--muted); margin-bottom: 24px; }
+.book-card .btn { width: 100%; }
+.booking { border: 0; padding: 0; background: transparent; width: min(540px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow: visible; color: var(--ink); }
+.booking::backdrop { background: rgba(20, 16, 14, .45); backdrop-filter: blur(4px); }
+.booking[open] { animation: pop .45s var(--ease); }
+@keyframes pop { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+.booking .form { background: var(--bg); max-height: calc(100dvh - 32px); overflow: auto; box-shadow: 0 30px 80px -30px rgba(0,0,0,.5); border-radius: var(--radius) var(--radius) 0 0; border-bottom: 0; }
+.booking__quick { background: var(--surface); border: 1px solid var(--line); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); padding: 14px clamp(24px, 3vw, 40px); display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px; color: var(--muted); }
+.booking__quick a { color: var(--accent); font-weight: 500; }
+.booking__close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: border-color .2s; }
+.booking__close:hover { border-color: var(--accent); }
+.booking { position: fixed; }
+.booking .form h3 { padding-right: 44px; margin-bottom: 10px; }
+.booking .form-body > p { margin-bottom: 24px; }
+body.modal-open { overflow: hidden; }
+@media (max-width: 600px) {
+  .booking { width: 100%; max-width: 100%; margin: auto 0 0; max-height: 92dvh; }
+  .booking .form { max-height: calc(92dvh - 60px); border-radius: 18px 18px 0 0; }
+  .booking__quick { border-radius: 0; padding-bottom: calc(14px + env(safe-area-inset-bottom)); }
+  .booking[open] { animation: up .4s var(--ease); }
+  @keyframes up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+}
+@media (prefers-reduced-motion: reduce) { .booking[open] { animation: none; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19l7-7"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-4 0-7-3-7-7 0-4 4-6 4-10 3 2 4 4 4 6 1-1 2-2 2-4 2 2 4 5 4 8 0 4-3 7-7 7z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5 5-5s5 2 5 5M14 19c0-2 1-4 3-4s4 1.5 4 4"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></symbol>
+  <symbol id="i-hours" viewBox="0 0 24 24"><path d="M5 4h14M5 20h14M7 4c0 5 10 5 10 8s-10 3-10 8M17 4c0 5-10 5-10 8"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M6 21V4h12v17M3 21h18"/><circle cx="14.5" cy="12.5" r=".6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l8-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+</svg>
+
+<div class="proto-bar">Прототип. Тексты с <span class="dr">пунктиром</span> - мои варианты, их можно менять. Рамкой отмечено то, что нужно уточнить.</div>
+
+<header class="header">
+  <div class="wrap">
+    <a href="#top" class="logo">Донмаз Буглуев<small>психолог</small></a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#requests">С чем работаю</a>
+      <a href="#how">Как проходит</a>
+      <a href="#about">Обо мне</a>
+      <a href="#important">Важно</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a href="#contact" data-book class="btn btn--sm">Записаться</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><svg class="icon"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hero__place"><svg class="icon"><use href="#i-pin"/></svg><span>Краснодар · очно и онлайн</span></p>
+        <h1><span class="dr">Понять себя и&nbsp;свою ситуацию</span> <em class="dr">в&nbsp;комфортном темпе</em></h1>
+        <p class="hero__lead">Донмаз Буглуев, социальный психолог. Работаю с самооценкой, тревожностью, эмоциональным истощением, перфекционизмом и прокрастинацией. Использую инструменты когнитивно-поведенческого подхода.</p>
+        <div class="hero__actions">
+          <a href="#contact" data-book class="btn">Записаться на консультацию</a>
+          <a href="#how" class="link-arrow">Как проходит работа <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <div class="portrait__note"><svg class="icon"><use href="#i-camera"/></svg>Здесь будет ваше фото<br>(вертикальное, спокойный фон)</div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap wrap--plain">
+      <div class="facts">
+        <div class="fact"><svg class="icon"><use href="#i-cap"/></svg><div><b>Диплом</b>социального психолога</div></div>
+        <div class="fact"><svg class="icon"><use href="#i-book"/></svg><div><b>КПТ</b>когнитивно-поведенческий подход</div></div>
+        <div class="fact"><svg class="icon"><use href="#i-clock"/></svg><div><b>60-90 мин</b>консультация</div></div>
+        <div class="fact"><svg class="icon"><use href="#i-screen"/></svg><div><b>Очно и онлайн</b>Краснодар</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="requests">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>С какими запросами можно обратиться</h2>
+        <p class="dr">Если узнаёте себя хотя бы в одном пункте, можно просто написать и рассказать, что происходит.</p>
+      </div>
+      <div class="requests reveal">
+        <div class="req"><div class="req__icon"><svg class="icon"><use href="#i-compass"/></svg></div><div><h3>Самооценка и уверенность в себе</h3><p>Сомневаетесь в своих силах или боитесь оценки окружающих? Вместе разберём внутренний диалог и поищем способы сформировать более устойчивое и доброжелательное отношение к себе.</p></div></div>
+        <div class="req"><div class="req__icon"><svg class="icon"><use href="#i-wave"/></svg></div><div><h3>Повышенная тревожность и постоянное беспокойство</h3><p>Часто переживаете о будущем, чувствуете напряжение? На консультациях разберём, что усиливает беспокойство, и подберём способы справляться с ним в повседневной жизни.</p></div></div>
+        <div class="req"><div class="req__icon"><svg class="icon"><use href="#i-flame"/></svg></div><div><h3>Эмоциональное истощение и снижение мотивации</h3><p>Чувствуете усталость, потерю интереса к привычным занятиям или трудности с мотивацией? Вместе разберёмся, что может влиять на ваше состояние, и определим посильные шаги.</p></div></div>
+        <div class="req"><div class="req__icon"><svg class="icon"><use href="#i-check"/></svg></div><div><h3>Перфекционизм и прокрастинация</h3><p>Ставите себе слишком высокие требования, откладываете дела или с трудом принимаете решения? Обсудим, как ставить реалистичные цели и распределять усилия.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Как проходит работа</h2>
+        <p>Работаю с инструментами когнитивно-поведенческого подхода. На консультациях мы вместе:</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><h3>Разбираем ситуацию</h3><p class="dr">Что происходит сейчас, что беспокоит и что хочется изменить.</p></div>
+        <div class="step"><h3>Замечаем мысли и реакции</h3><p>Находим мысли и привычные реакции, которые могут усиливать трудности.</p></div>
+        <div class="step"><h3>Ищем способы справляться</h3><p>Подбираем способы, которые подходят именно вам, и двигаемся в комфортном темпе.</p></div>
+      </div>
+      <div class="formats reveal">
+        <span class="chip"><svg class="icon"><use href="#i-door"/></svg>Очно, Краснодар</span>
+        <span class="chip"><svg class="icon"><use href="#i-screen"/></svg>Онлайн</span>
+        <span class="chip"><svg class="icon"><use href="#i-clock"/></svg>60-90 минут</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap about">
+      <div class="about__text reveal">
+        <div class="section-head" style="margin-bottom:28px"><h2>Обо мне</h2></div>
+        <p class="big">Моя задача - помочь лучше понять себя и свою ситуацию, определить возможные направления изменений и двигаться в комфортном темпе.</p>
+        <p>Меня зовут Донмаз Буглуев. Я дипломированный социальный психолог, практикую около года. Результат зависит от запроса и обстоятельств человека, поэтому я не обещаю конкретных изменений за определённое число встреч.</p>
+        <ul class="creds">
+          <li><svg class="icon"><use href="#i-cap"/></svg><span>Высшее образование: Московский финансово-промышленный университет «Синергия», 2024</span></li>
+          <li><svg class="icon"><use href="#i-book"/></svg><span>Инструменты когнитивно-поведенческого подхода</span></li>
+          <li><svg class="icon"><use href="#i-camera"/></svg><span class="todo">Фото диплома - добавим, если клиент захочет</span></li>
+        </ul>
+      </div>
+      <aside class="price reveal" aria-label="Стоимость">
+        <h3>Консультация</h3>
+        <p class="price__sum">60-90 минут</p>
+        <ul>
+          <li><svg class="icon"><use href="#i-pin"/></svg><span>Очно: Краснодар, <span class="todo">адрес - уточнить</span></span></li>
+          <li><svg class="icon"><use href="#i-screen"/></svg>Онлайн</li>
+          <li><svg class="icon"><use href="#i-chat"/></svg><span class="todo">Стоимость - уточнить</span></li>
+        </ul>
+        <a href="#contact" data-book class="btn">Записаться</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="important">
+    <div class="wrap">
+      <div class="notice reveal">
+        <svg class="icon"><use href="#i-shield"/></svg>
+        <div>
+          <h2>Важно знать</h2>
+          <p>Я социальный психолог: не провожу клиническую диагностику и не занимаюсь лечением психических расстройств, зависимостей и тяжёлых депрессивных состояний. При таких трудностях рекомендую обратиться к профильному специалисту.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>Частые вопросы</h2></div>
+      <div class="faq reveal">
+        <details><summary class="dr">Как проходит первая консультация?</summary><p class="dr">Вы рассказываете, что вас беспокоит, а я задаю вопросы, чтобы лучше понять ситуацию. Вместе определяем, с чем хотите работать и что хотите изменить.</p></details>
+        <details><summary class="dr">Сколько нужно встреч?</summary><p class="dr">Это зависит от запроса и обстоятельств. Я не обещаю конкретных изменений за определённое число встреч: двигаемся в комфортном для вас темпе.</p></details>
+        <details><summary class="dr">Можно ли заниматься онлайн?</summary><p class="dr">Да. Консультации проходят онлайн или очно в Краснодаре, выбирайте удобный формат.</p></details>
+        <details><summary class="dr">С чем вы не работаете?</summary><p class="dr">Я не провожу клиническую диагностику и не лечу психические расстройства, зависимости и тяжёлые депрессивные состояния. В таких случаях лучше обратиться к профильному специалисту.</p></details>
+        <details><summary class="dr">Как записаться?</summary><p class="dr">Напишите в Telegram, WhatsApp или MAX, позвоните или оставьте заявку на сайте.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Записаться на консультацию</h2>
+          <p class="dr">Напишите в удобный мессенджер, позвоните или оставьте заявку. Можно коротко рассказать, что беспокоит.</p>
+        </div>
+        <div class="messengers">
+          <a class="msg" href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener"><span class="msg__icon"><svg class="icon"><use href="#i-plane"/></svg></span><div><b>Telegram</b><span>@donmaz_nurullahovich</span></div><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+          <a class="msg" href="https://wa.me/79953220962" target="_blank" rel="noopener"><span class="msg__icon"><svg class="icon"><use href="#i-wa"/></svg></span><div><b>WhatsApp</b><span>@donmaz_nurullahovich</span></div><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+          <a class="msg" href="https://max.ru/u/f9LHodD0cOLXTUJtXvfyx0-tKCJF2pC5kTmJlCMhf9jORn4yTAib8PZDsG4" target="_blank" rel="noopener"><span class="msg__icon">MAX</span><div><b>MAX</b><span>Написать в чат</span></div><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+          <a class="msg" href="tel:+79953220962"><span class="msg__icon"><svg class="icon"><use href="#i-phone"/></svg></span><div><b>+7 995 322-09-62</b><span>Позвонить</span></div><svg class="icon arrow"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="book-card reveal">
+        <h3>Оставить заявку</h3>
+        <p>Оставьте имя и телефон, и я свяжусь с вами удобным способом.</p>
+        <button type="button" class="btn" data-book>Оставить заявку</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>Донмаз Буглуев, психолог · Краснодар</span>
+    <a href="#">Политика конфиденциальности</a>
+    <span>Прототип: Ирина Бовдуй</span>
+  </div>
+</footer>
+
+
+<dialog class="booking" id="booking" aria-labelledby="booking-title">
+  <button type="button" class="booking__close" data-close aria-label="Закрыть окно"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <form class="form" id="form" novalidate>
+        <div class="form-body">
+          <h3 id="booking-title">Записаться на консультацию</h3>
+          <p>Оставьте номер, и я свяжусь с вами.</p>
+          <div class="field" id="f-name"><label for="name">Как к вам обращаться</label><input id="name" name="name" autocomplete="given-name" placeholder="Имя" required><span class="err">Напишите, как к вам обращаться</span></div>
+          <div class="field" id="f-phone"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required><span class="err">Проверьте номер: нужно 11 цифр</span></div>
+          <fieldset class="field">
+            <legend>Где удобнее связаться</legend>
+            <div class="ways">
+              <input type="radio" name="way" id="w1" value="Telegram" checked><label for="w1">Telegram</label>
+              <input type="radio" name="way" id="w2" value="WhatsApp"><label for="w2">WhatsApp</label>
+              <input type="radio" name="way" id="w3" value="MAX"><label for="w3">MAX</label>
+              <input type="radio" name="way" id="w4" value="Звонок"><label for="w4">Звонок</label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="msg">Коротко о запросе <span style="color:var(--muted);font-weight:400">(необязательно)</span></label><textarea id="msg" name="msg" placeholder="Можно пропустить"></textarea></div>
+          <label class="consent"><input type="checkbox" id="agree" required><span>Согласен(на) на обработку персональных данных и с&nbsp;<a href="#">политикой конфиденциальности</a></span></label>
+          <button class="btn" type="submit" id="send" disabled>Отправить заявку</button>
+        </div>
+        <div class="form-ok" role="status" aria-live="polite">
+          <svg class="icon"><use href="#i-check"/></svg>
+          <h3>Заявка отправлена</h3>
+          <p>Спасибо! Я свяжусь с вами.<br>(В прототипе заявка никуда не уходит.)</p>
+        </div>
+      </form>
+  <div class="booking__quick">
+    <span>Или сразу напишите:</span>
+    <a href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://wa.me/79953220962" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://max.ru/u/f9LHodD0cOLXTUJtXvfyx0-tKCJF2pC5kTmJlCMhf9jORn4yTAib8PZDsG4" target="_blank" rel="noopener">MAX</a>
+    <a href="tel:+79953220962">Позвонить</a>
+  </div>
+</dialog>
+
+<div class="themer" role="group" aria-label="Цвет сайта">
+  <p>Цвет сайта</p>
+  <div class="themer__list">
+    <button data-set="terracotta" aria-pressed="true"><i style="background:#A15A3A"></i>Терракота</button>
+    <button data-set="sage" aria-pressed="false"><i style="background:#5A6D54"></i>Шалфей</button>
+    <button data-set="mist" aria-pressed="false"><i style="background:#4B6B7E"></i>Туман</button>
+    <button data-set="lavender" aria-pressed="false"><i style="background:#765B83"></i>Лаванда</button>
+  </div>
+</div>
+
+<div class="mobile-cta">
+  <a href="#contact" data-book class="btn">Записаться</a>
+  <a href="https://t.me/donmaz_nurullahovich" class="btn btn--ghost" aria-label="Написать в Telegram" target="_blank" rel="noopener"><svg class="icon"><use href="#i-plane"/></svg></a>
+  <a href="tel:+79953220962" class="btn btn--ghost" aria-label="Позвонить"><svg class="icon"><use href="#i-phone"/></svg></a>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // Цветовые темы
+  var btns = document.querySelectorAll('.themer button');
+  function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.set === t ? 'true' : 'false'); });
+    try { localStorage.setItem('psy-theme', t); } catch (e) {}
+  }
+  try { var saved = localStorage.getItem('psy-theme'); if (saved) setTheme(saved); } catch (e) {}
+  btns.forEach(function (b) { b.addEventListener('click', function () { setTheme(b.dataset.set); }); });
+
+  // Меню на телефоне
+  var burger = document.getElementById('burger'), nav = document.getElementById('nav');
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
+
+  // Появление блоков
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+
+
+  // Плавный переход к разделам
+  var header = document.querySelector('.header');
+  document.querySelectorAll('a[href^="#"]:not([data-book])').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href').slice(1);
+      var target = id ? document.getElementById(id) : null;
+      if (!target) return;
+      e.preventDefault();
+      target.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+      var top = target.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight + 1;
+      window.scrollTo({ top: id === 'top' ? 0 : top, behavior: 'smooth' });
+    });
+  });
+
+  // Окно записи
+  var dlg = document.getElementById('booking');
+  function openBooking(e) {
+    if (e) e.preventDefault();
+    nav.classList.remove('open');
+    if (typeof dlg.showModal === 'function') { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+    document.body.classList.add('modal-open');
+    setTimeout(function () { var n = document.getElementById('name'); if (n && !form.classList.contains('sent')) n.focus(); }, 60);
+  }
+  function closeBooking() {
+    if (typeof dlg.close === 'function') { dlg.close(); } else { dlg.removeAttribute('open'); }
+  }
+  dlg.addEventListener('close', function () {
+    document.body.classList.remove('modal-open');
+    if (form.classList.contains('sent')) {
+      form.reset(); form.classList.remove('sent');
+      send.textContent = 'Отправить заявку'; send.disabled = true;
+    }
+  });
+  document.querySelectorAll('[data-book]').forEach(function (b) { b.addEventListener('click', openBooking); });
+  dlg.querySelector('[data-close]').addEventListener('click', closeBooking);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeBooking(); });
+
+  // Форма
+  var form = document.getElementById('form'), phone = document.getElementById('phone'),
+      name = document.getElementById('name'), agree = document.getElementById('agree'), send = document.getElementById('send');
+  phone.addEventListener('input', function () {
+    var d = phone.value.replace(/\D/g, '');
+    if (d[0] === '8') d = '7' + d.slice(1);
+    if (d && d[0] !== '7') d = '7' + d;
+    d = d.slice(0, 11);
+    var out = '';
+    if (d.length) out = '+7';
+    if (d.length > 1) out += ' (' + d.slice(1, 4);
+    if (d.length >= 4) out += ')';
+    if (d.length > 4) out += ' ' + d.slice(4, 7);
+    if (d.length > 7) out += '-' + d.slice(7, 9);
+    if (d.length > 9) out += '-' + d.slice(9, 11);
+    phone.value = out;
+    document.getElementById('f-phone').classList.remove('error');
+  });
+  name.addEventListener('input', function () { document.getElementById('f-name').classList.remove('error'); });
+  agree.addEventListener('change', function () { send.disabled = !agree.checked; });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    if (!name.value.trim()) { document.getElementById('f-name').classList.add('error'); ok = false; }
+    if (phone.value.replace(/\D/g, '').length !== 11) { document.getElementById('f-phone').classList.add('error'); ok = false; }
+    if (!ok) return;
+    send.disabled = true; send.textContent = 'Отправляю…';
+    // Здесь будет отправка заявки в Telegram/MAX через обработчик на сервере
+    setTimeout(function () { form.classList.add('sent'); }, 700);
+  });
+})();
+</script>
+</body>
+</html>
