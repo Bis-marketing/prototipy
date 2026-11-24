@@ -198,11 +198,39 @@ footer .fn{font:600 28px/1 var(--serif);letter-spacing:.08em;text-transform:uppe
 footer p{font-size:13px;opacity:.7;margin-top:12px}
 
 .mbar{display:none}
+
+/* мобильное меню */
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;padding:8px 20px 22px;border-top:1px solid var(--line);background:var(--bg)}
+.mnav a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line);font:600 22px/1.2 var(--serif)}
+.mnav .btn{margin-top:18px}
+
+/* окно записи */
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(18,32,26,.55);backdrop-filter:blur(4px);animation:fade .25s ease}
+.modal[hidden]{display:none}
+.modal-box{position:relative;width:100%;max-width:520px;max-height:calc(100vh - 40px);overflow:auto;background:var(--card);border-radius:24px;padding:clamp(26px,5vw,40px);box-shadow:0 30px 80px -20px rgba(0,0,0,.45);animation:up .35s var(--ease)}
+.modal-box h2{font-size:clamp(30px,5vw,38px);margin:12px 0 10px}
+.modal-x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font:300 28px/1 var(--sans);color:var(--ink);cursor:pointer}
+.m-list{display:grid;gap:10px;margin-top:22px}
+.m-ct{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;background:var(--deep);color:var(--on-deep);transition:transform .2s var(--ease),filter .2s}
+.m-ct:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.m-ct svg{width:24px;height:24px;color:var(--gold);flex:none}
+.m-ct b{display:block;font-size:16px}
+.m-ct small{font-size:13px;color:var(--on-deep-muted)}
+.m-note{margin-top:18px;font-size:13px;color:var(--muted);text-align:center}
+body.lock{overflow:hidden}
+@keyframes fade{from{opacity:0}}
+@keyframes up{from{opacity:0;transform:translateY(20px)}}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
 
-@media (max-width:1100px){.menu{display:none}}
+@media (max-width:1100px){.menu{display:none}.burger{display:flex}}
 @media (max-width:980px){
   .hero-grid,.ap-grid,.about-grid,.cta{grid-template-columns:1fr}
   .photo-wrap{max-width:460px;width:100%;margin:0 auto}
@@ -212,6 +240,11 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
 @media (max-width:640px){
   .nav .btn{display:none}
   .req-grid,.contacts,.steps{grid-template-columns:1fr}
+  .facts{padding:22px 16px}
+  .facts ul{gap:18px 12px}
+  .facts li{font-size:16px}
+  .facts li small{font-size:12px}
+  .card,.step{padding:24px}
   .f1{right:8px}.f2{left:8px}
   .limit{grid-template-columns:1fr;text-align:center}.limit .ring{margin:0 auto}
   .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line)}
@@ -239,8 +272,19 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
       <a href="#faq">Вопросы</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a href="#contacts" class="btn btn-main">Записаться</a>
+    <a href="#contacts" data-book class="btn btn-main">Записаться</a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
+  <nav class="mnav" id="mnav" aria-label="Меню">
+    <a href="#requests">С чем помогаю</a>
+    <a href="#approach">Подход</a>
+    <a href="#about">Обо мне</a>
+    <a href="#format">Формат</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+    <a href="#contacts" data-book class="btn btn-main">Записаться на консультацию</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -254,7 +298,7 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
         <p class="lead">Тревога, усталость, сомнения в себе - с этим не обязательно справляться в одиночку.</p>
         <p class="desc">Вместе разберём ситуацию, заметим мысли и привычные реакции, которые усиливают трудности, и подберём способы справляться, которые подходят именно вам.</p>
         <div class="actions">
-          <a href="#contacts" class="btn btn-main">Записаться на консультацию</a>
+          <a href="#contacts" data-book class="btn btn-main">Записаться на консультацию</a>
           <a href="#requests" class="btn btn-line">С чем можно прийти</a>
         </div>
         <div class="reach">
@@ -315,7 +359,7 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
         <p>Обсудим, как ставить реалистичные цели, распределять усилия и легче принимать решения.</p>
       </article>
     </div>
-    <div class="center" style="margin-top:36px"><a href="#contacts" class="btn btn-gold">Обсудить свой запрос</a></div>
+    <div class="center" style="margin-top:36px"><a href="#contacts" data-book class="btn btn-gold">Обсудить свой запрос</a></div>
   </div>
 </section>
 
@@ -386,7 +430,7 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
       <p class="price">— ₽ <small>/ встреча</small></p>
       <span class="tag-ph">стоимость уточняется</span>
       <ul><li>60-90 минут</li><li>Из дома, в спокойной обстановке</li><li>Удобно, если вы не в Краснодаре</li></ul>
-      <a href="#contacts" class="btn btn-main">Записаться онлайн</a>
+      <a href="#contacts" data-book class="btn btn-main">Записаться онлайн</a>
     </div>
     <div class="plan top reveal">
       <span class="badge">Краснодар</span>
@@ -395,7 +439,7 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
       <p class="price">— ₽ <small>/ встреча</small></p>
       <span class="tag-ph">стоимость и адрес уточняются</span>
       <ul><li>60-90 минут</li><li>Живой контакт</li><li>Г. Краснодар</li></ul>
-      <a href="#contacts" class="btn btn-gold">Записаться очно</a>
+      <a href="#contacts" data-book class="btn btn-gold">Записаться очно</a>
     </div>
   </div>
 </section>
@@ -477,11 +521,54 @@ footer p{font-size:13px;opacity:.7;margin-top:12px}
 </div>
 
 <div class="mbar">
-  <a class="btn btn-main" href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener">Telegram</a>
+  <a class="btn btn-main" href="#contacts" data-book>Записаться</a>
   <a class="btn btn-line" href="tel:+79953220962">Позвонить</a>
 </div>
 
+<!-- Окно записи поверх сайта -->
+<div class="modal" id="book" role="dialog" aria-modal="true" aria-labelledby="book-title" hidden>
+  <div class="modal-box">
+    <button class="modal-x" type="button" aria-label="Закрыть">&times;</button>
+    <span class="eyebrow">Запись</span>
+    <h2 id="book-title">Записаться на <span class="gold">консультацию</span></h2>
+    <p class="muted">Выберите удобный способ связи. Можно написать коротко - «хочу записаться», остальное обсудим.</p>
+    <div class="m-list">
+      <a class="m-ct" href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l8-6"/></svg><span><b>Telegram</b><small>@donmaz_nurullahovich</small></span></a>
+      <a class="m-ct" href="https://wa.me/79953220962" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg><span><b>WhatsApp</b><small>написать в чат</small></span></a>
+      <a class="m-ct" href="https://max.ru/u/f9LHodD0cOLXTUJtXvfyx0-tKCJF2pC5kTmJlCMhf9jORn4yTAib8PZDsG4" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="4"/><path d="M8 21l3-3"/></svg><span><b>MAX</b><small>написать в MAX</small></span></a>
+      <a class="m-ct" href="tel:+79953220962"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><b>+7 995 322-09-62</b><small>позвонить</small></span></a>
+    </div>
+    <p class="m-note">Онлайн или очно в Краснодаре · 60-90 минут · конфиденциально</p>
+  </div>
+</div>
+
 <script>
+(function(){
+  var header=document.querySelector('header'),burger=document.querySelector('.burger'),mnav=document.getElementById('mnav');
+  function closeMenu(){mnav.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+  burger.addEventListener('click',function(){var o=mnav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+
+  /* переход к разделам меню */
+  document.querySelectorAll('a[href^="#"]:not([data-book])').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1),el=id==='top'?document.body:document.getElementById(id);
+      if(!el)return;
+      e.preventDefault();closeMenu();
+      var y=id==='top'?0:el.getBoundingClientRect().top+window.pageYOffset-header.offsetHeight+1;
+      window.scrollTo({top:y,behavior:'smooth'});
+      try{history.replaceState(null,'','#'+id)}catch(err){}
+    });
+  });
+
+  /* окно записи */
+  var modal=document.getElementById('book'),last=null;
+  function openBook(e){e.preventDefault();closeMenu();last=document.activeElement;modal.hidden=false;document.body.classList.add('lock');modal.querySelector('.modal-x').focus()}
+  function closeBook(){modal.hidden=true;document.body.classList.remove('lock');if(last)last.focus()}
+  document.querySelectorAll('[data-book]').forEach(function(b){b.addEventListener('click',openBook)});
+  modal.querySelector('.modal-x').addEventListener('click',closeBook);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeBook()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeBook()});
+})();
 (function(){
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
