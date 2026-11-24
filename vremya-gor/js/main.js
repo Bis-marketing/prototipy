@@ -167,13 +167,6 @@
   lb.addEventListener('click', e => { if (e.target === lb || e.target === stage) closeLb(); });
   lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
 
-  /* Живая карта по кнопке */
-  $('#mapLive').addEventListener('click', e => {
-    const box = $('#roadMap');
-    box.insertAdjacentHTML('beforeend', '<iframe title="Глэмпинг «Время гор» на Яндекс Картах" src="https://yandex.ru/map-widget/v1/?ll=40.288318%2C44.200412&z=12&pt=40.288318%2C44.200412%2Cpm2rdm&oid=189997695506" allowfullscreen></iframe>');
-    e.currentTarget.remove();
-  });
-
   /* Галереи шатров */
   $$('.tent').forEach(t => {
     const main = $('.tent__main', t);

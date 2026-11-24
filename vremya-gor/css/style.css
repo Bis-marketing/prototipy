@@ -687,3 +687,5 @@ html.modal-open { overflow: hidden; }
 .road__live { position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; padding: .7em 1.1em; border-radius: 100px; border: 0; background: #fff; color: var(--ink); font-weight: 600; font-size: .88rem; cursor: pointer; box-shadow: 0 10px 24px -10px rgba(0,0,0,.45); transition: background .25s, color .25s; }
 .road__live:hover { background: var(--ember); color: var(--night); }
 .road__map iframe { position: absolute; inset: 0; filter: none; }
+.road__open { position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; padding: .7em 1.1em; border-radius: 100px; background: #fff; color: var(--ink); font-weight: 600; font-size: .88rem; box-shadow: 0 10px 24px -10px rgba(0,0,0,.45); transition: background .25s, color .25s; }
+.road__static:hover .road__open { background: var(--ember); color: var(--night); }
