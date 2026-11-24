@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Донмаз Буглуев - психолог в Краснодаре и онлайн</title>
+<meta name="description" content="Социальный психолог Донмаз Буглуев. Консультации онлайн и очно в Краснодаре: самооценка, тревожность, выгорание, перфекционизм и прокрастинация.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F3EE;
+  --alt:#ECE6DE;
+  --card:#FFFFFF;
+  --line:#DDD4C8;
+  --ink:#2B2723;
+  --muted:#6B645C;
+  --olive:#5F7146;
+  --olive-soft:#E6EADB;
+  --terra:#D9664A;
+  --terra-dark:#C2553B;
+  --r:18px;
+  --shadow:0 10px 30px rgba(60,45,30,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:68px}
+body.lock{overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+section.alt{background:var(--alt)}
+h1,h2,h3{font-weight:700;line-height:1.2}
+h2{font-size:clamp(24px,3.4vw,34px);text-transform:uppercase;letter-spacing:.02em;text-align:center;margin-bottom:44px}
+h2 em,h1 em{font-style:normal;color:var(--olive)}
+.lead{color:var(--muted);max-width:640px;margin:-28px auto 44px;text-align:center}
+
+/* кнопки и плашки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--terra);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:17px 34px;font:600 16px/1.2 inherit;font-family:inherit;cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 8px 20px rgba(217,102,74,.25)}
+.btn:hover{background:var(--terra-dark);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--olive);color:var(--olive)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--olive);color:#fff;font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px}
+.chip.light{background:var(--olive-soft);color:var(--olive)}
+
+/* заглушки - то, чего пока нет от клиента */
+.ph{position:relative;border:2px dashed #C9BCA9;border-radius:var(--r);background:repeating-linear-gradient(135deg,#EFE9E0 0 14px,#E9E2D7 14px 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:#8C8174;font-size:13px;font-weight:500;padding:16px}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9A6B2F;background:#F7E9D4;border:1px dashed #D8B485;border-radius:6px;padding:2px 7px;vertical-align:middle}
+
+/* шапка */
+header{position:sticky;top:0;z-index:20;background:rgba(246,243,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.logo{font-weight:700;font-size:15px;text-decoration:none;line-height:1.2}
+.logo small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
+nav{display:flex;gap:26px}
+nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted)}
+nav a:hover{color:var(--olive)}
+.bar .btn{padding:11px 20px;font-size:14px;box-shadow:none}
+.bar-right{display:flex;align-items:center;gap:10px}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span:before,.burger span:after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .25s,background .25s}
+.burger span:before,.burger span:after{content:"";position:absolute;left:0}
+.burger span:before{top:-6px}
+.burger span:after{top:6px}
+header.open .burger span{background:transparent}
+header.open .burger span:before{transform:translateY(6px) rotate(45deg)}
+header.open .burger span:after{transform:translateY(-6px) rotate(-45deg)}
+
+/* окно записи */
+.modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(43,39,35,.55);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.modal.show{opacity:1;visibility:visible}
+.modal-box{position:relative;width:100%;max-width:440px;max-height:calc(100dvh - 32px);overflow-y:auto;transform:translateY(16px);transition:transform .3s}
+.modal.show .modal-box{transform:none}
+.modal-box form{padding:36px 28px 28px}
+.modal-box h3{padding:0 36px;line-height:1.35}
+.modal-box .intro{text-align:center;font-size:14px;color:var(--muted);margin:-8px 0 18px}
+.modal-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;border-radius:50%;background:var(--alt);color:var(--ink);font-size:24px;line-height:1;cursor:pointer;z-index:2}
+.modal-close:hover{background:var(--line)}
+.quick{display:flex;gap:8px;justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);flex-wrap:wrap;align-items:center}
+.quick a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:36px;padding:0 10px;border-radius:10px;color:#fff;font-weight:700;font-size:12px;text-decoration:none}
+
+/* первый экран */
+.hero{padding:56px 0 0;background:linear-gradient(180deg,var(--alt),var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.hero-text{padding-bottom:72px}
+.eyebrow{font-size:14px;font-weight:600;color:var(--muted);margin-bottom:14px}
+.hero h1{font-size:clamp(30px,4.6vw,50px);text-transform:uppercase;margin:18px 0 10px}
+.hero .sub{font-size:clamp(17px,2vw,21px);font-weight:600;color:var(--olive);text-transform:uppercase;margin-bottom:18px}
+.hero p.desc{color:var(--muted);max-width:520px;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-note{display:flex;gap:12px;align-items:center;margin-top:22px;font-size:13px;color:var(--muted)}
+.hero-note svg{flex:none}
+.hero-photo{height:540px;border-bottom:0;border-radius:200px 200px 0 0}
+
+/* карточки "для вас, если" */
+.fit{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.fit-card{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:150px 1fr}
+.fit-card .ph{border-radius:0;border:0;border-right:2px dashed #C9BCA9;min-height:100%}
+.fit-card .body{padding:24px 24px 26px}
+.fit-card h3{font-size:17px;margin-bottom:8px}
+.fit-card p{font-size:14px;color:var(--muted)}
+
+/* на консультации мы */
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px;max-width:900px;margin:0 auto 44px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.ico{flex:none;width:54px;height:54px;border-radius:50%;background:var(--olive-soft);display:flex;align-items:center;justify-content:center}
+.ico svg{width:26px;height:26px;stroke:var(--olive);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.step b{display:block;margin-bottom:4px}
+.step span{font-size:14px;color:var(--muted)}
+.center{text-align:center}
+
+/* как проходит работа - таймлайн */
+.process{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.process .ph{height:100%;min-height:460px}
+.timeline{position:relative;padding-left:34px}
+.timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--terra);opacity:.5}
+.tl{position:relative;margin-bottom:32px}
+.tl:last-child{margin-bottom:0}
+.tl:before{content:"";position:absolute;left:-34px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--terra)}
+.tl .n{font-size:13px;font-weight:700;color:var(--olive);text-transform:uppercase;letter-spacing:.06em}
+.tl h3{font-size:18px;margin:4px 0 8px}
+.tl ul{list-style:none}
+.tl li{position:relative;padding-left:16px;font-size:14px;color:var(--muted);margin-bottom:4px}
+.tl li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--olive)}
+
+/* обо мне */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.about .ph{height:460px;border-radius:var(--r) var(--r) 160px var(--r)}
+.about .eyebrow{margin-bottom:6px}
+.about h2{text-align:left;margin-bottom:22px}
+.facts{list-style:none;margin-bottom:28px}
+.facts li{position:relative;padding-left:20px;margin-bottom:10px}
+.facts li:before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--olive)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:var(--alt);border-radius:var(--r);padding:24px}
+.stat b{display:block;font-size:30px;color:var(--terra);line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.docs .ph{height:170px}
+
+/* формат и стоимость */
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fmt{background:var(--card);border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+.fmt h3{font-size:18px;margin:14px 0 8px}
+.fmt p{font-size:14px;color:var(--muted)}
+.fmt .price{font-size:26px;font-weight:700;color:var(--terra);margin-top:14px}
+
+/* отзывы */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.reviews .ph{height:260px}
+
+/* важно */
+.notice{max-width:860px;margin:0 auto;background:var(--card);border-left:5px solid var(--olive);border-radius:var(--r);padding:32px 36px;box-shadow:var(--shadow)}
+.notice h3{font-size:19px;margin-bottom:10px}
+.notice p{color:var(--muted)}
+
+/* FAQ */
+.faq{max-width:860px;margin:0 auto}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary .plus{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--terra);color:var(--terra);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .25s}
+details[open] .plus{transform:rotate(45deg)}
+details p{padding:0 48px 22px 0;color:var(--muted)}
+
+/* запись */
+.cta{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center}
+.cta h2{text-align:left;margin-bottom:16px}
+.cta p{color:var(--muted);margin-bottom:24px}
+.messengers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:460px}
+.msg{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;font-weight:600;font-size:14px;transition:border-color .2s}
+.msg:hover{border-color:var(--olive)}
+.msg i{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:13px;font-weight:700}
+.msg small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+form{background:var(--card);border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+form h3{text-align:center;text-transform:uppercase;font-size:16px;margin-bottom:18px}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+input,select{width:100%;font:inherit;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);margin-bottom:14px;color:var(--ink)}
+input:focus,select:focus{outline:2px solid var(--olive);outline-offset:1px;border-color:transparent}
+form .btn{width:100%;margin-top:4px}
+.agree{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--muted);margin-top:14px}
+.agree input{width:auto;margin:2px 0 0}
+.ok{display:none;text-align:center;color:var(--olive);font-weight:600;margin-top:14px}
+
+footer{background:var(--ink);color:#CFC7BC;padding:40px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:#fff}
+
+/* адаптив */
+@media (max-width:900px){
+  .burger{display:flex}
+  nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(60,45,30,.08);padding:6px 20px 14px}
+  header.open nav{display:flex}
+  nav a{padding:13px 0;font-size:16px;color:var(--ink);border-bottom:1px solid var(--line)}
+  nav a:last-child{border-bottom:0}
+  section{padding:64px 0}
+  .hero .wrap,.process,.about,.cta{grid-template-columns:1fr}
+  .hero-text{padding-bottom:0}
+  .hero-photo{height:380px;max-width:420px;width:100%;margin:0 auto}
+  .fit,.steps,.formats,.reviews{grid-template-columns:1fr}
+  .process .ph{min-height:260px}
+  .about .ph{height:360px}
+  .docs{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .docs .ph{height:110px;font-size:11px;padding:6px;overflow:hidden}
+  .docs .tag{font-size:9px;padding:2px 4px;letter-spacing:0}
+}
+@media (max-width:560px){
+  .bar .btn{width:auto;padding:10px 14px;font-size:13px}
+  .logo{font-size:14px}
+  .logo small{font-size:11px}
+  .fit-card{grid-template-columns:1fr}
+  .fit-card .ph{min-height:150px;border-right:0;border-bottom:2px dashed #C9BCA9}
+  .stats{grid-template-columns:1fr;text-align:center}
+  .messengers{grid-template-columns:1fr}
+  .btn{width:100%}
+  .notice{padding:26px 22px}
+  details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Донмаз Буглуев<small>социальный психолог</small></a>
+    <nav>
+      <a href="#requests">С чем работаю</a>
+      <a href="#process">Как проходит</a>
+      <a href="#about">Обо мне</a>
+      <a href="#format">Формат</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="bar-right">
+      <a class="btn" href="#contacts" data-modal>Записаться</a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- 1. Первый экран -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="eyebrow">Дипломированный социальный психолог · когнитивно-поведенческий подход</div>
+      <div class="chips">
+        <span class="chip">Онлайн</span>
+        <span class="chip">Очно в Краснодаре</span>
+        <span class="chip light">60-90 минут</span>
+      </div>
+      <h1>Донмаз <em>Буглуев</em></h1>
+      <div class="sub">Психологические консультации: помогаю лучше понять себя</div>
+      <p class="desc">Вместе разберём ситуацию, заметим мысли и привычные реакции, которые усиливают трудности, и найдём подходящие именно вам способы справляться с ними. В комфортном темпе.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#contacts" data-modal>Записаться на консультацию</a>
+        <a class="btn ghost" href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+      <div class="hero-note">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5F7146" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg>
+        <span>Можно задать вопрос в мессенджере до записи - отвечу сам</span>
+      </div>
+    </div>
+    <div class="ph hero-photo">Фото психолога<br>(портрет, светлый фон)<br><span class="tag">нужно от клиента</span></div>
+  </div>
+</section>
+
+<!-- 2. Запросы -->
+<section id="requests">
+  <div class="wrap">
+    <h2>Консультация для вас, <em>если вы</em></h2>
+    <div class="fit">
+      <div class="fit-card">
+        <div class="ph">Фото-<br>настроение</div>
+        <div class="body">
+          <h3>Сомневаетесь в себе</h3>
+          <p>Боитесь оценки окружающих, не уверены в своих силах. Разберём внутренний диалог и поищем способы сформировать более устойчивое и доброжелательное отношение к себе.</p>
+        </div>
+      </div>
+      <div class="fit-card">
+        <div class="ph">Фото-<br>настроение</div>
+        <div class="body">
+          <h3>Постоянно тревожитесь</h3>
+          <p>Часто переживаете о будущем, чувствуете напряжение. Разберём, что усиливает беспокойство, и подберём способы справляться с ним в повседневной жизни.</p>
+        </div>
+      </div>
+      <div class="fit-card">
+        <div class="ph">Фото-<br>настроение</div>
+        <div class="body">
+          <h3>Устали и потеряли интерес</h3>
+          <p>Эмоциональное истощение, нет мотивации, привычные занятия не радуют. Разберёмся, что влияет на ваше состояние, и определим посильные шаги.</p>
+        </div>
+      </div>
+      <div class="fit-card">
+        <div class="ph">Фото-<br>настроение</div>
+        <div class="body">
+          <h3>Откладываете дела</h3>
+          <p>Перфекционизм и прокрастинация: слишком высокие требования к себе, трудно принимать решения. Обсудим, как ставить реалистичные цели и распределять усилия.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. На консультации мы -->
+<section class="alt" id="approach">
+  <div class="wrap">
+    <h2>На консультации <em>мы</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <div><b>Разбираем вашу ситуацию</b><span>Спокойно, без оценок - с того, что беспокоит вас сейчас</span></div>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.5 10.9V17h7v-3.1A6 6 0 0 0 12 3z"/><path d="M9.5 21h5"/></svg></div>
+        <div><b>Замечаем мысли и реакции</b><span>Те привычные шаги, которые могут усиливать трудности</span></div>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></svg></div>
+        <div><b>Ищем подходящие способы</b><span>Инструменты когнитивно-поведенческого подхода под ваш запрос</span></div>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg></div>
+        <div><b>Двигаемся в комфортном темпе</b><span>Определяем возможные направления изменений и посильные шаги</span></div>
+      </div>
+    </div>
+    <div class="center"><a class="btn" href="#contacts" data-modal>Записаться на консультацию</a></div>
+  </div>
+</section>
+
+<!-- 4. Как проходит работа -->
+<section id="process">
+  <div class="wrap">
+    <h2>Как проходит <em>работа</em></h2>
+    <div class="process">
+      <div class="ph">Фото кабинета<br>или психолога за работой<br><span class="tag">нужно от клиента</span></div>
+      <div class="timeline">
+        <div class="tl">
+          <div class="n">Шаг 1</div>
+          <h3>Знакомство и запрос</h3>
+          <ul>
+            <li>Вы пишете в удобный мессенджер или оставляете заявку</li>
+            <li>Выбираем формат: онлайн или очно в Краснодаре</li>
+            <li>Договариваемся о дне и времени встречи</li>
+          </ul>
+        </div>
+        <div class="tl">
+          <div class="n">Шаг 2</div>
+          <h3>Консультация 60-90 минут</h3>
+          <ul>
+            <li>Обсуждаем, что вас беспокоит, и формулируем запрос</li>
+            <li>Замечаем мысли и привычные реакции, которые усиливают трудности</li>
+            <li>Ищем способы справляться, которые подходят именно вам</li>
+          </ul>
+        </div>
+        <div class="tl">
+          <div class="n">Шаг 3</div>
+          <h3>Дальнейшие шаги</h3>
+          <ul>
+            <li>Определяем возможные направления изменений</li>
+            <li>Решаем вместе, нужны ли следующие встречи</li>
+            <li>Двигаемся в темпе, который вам комфортен</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Обо мне -->
+<section class="alt" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="ph">Фото психолога<br>(второй портрет)<br><span class="tag">нужно от клиента</span></div>
+      <div>
+        <div class="eyebrow">Психолог-консультант</div>
+        <h2>Донмаз <em>Нуруллахович</em> Буглуев</h2>
+        <ul class="facts">
+          <li>Дипломированный социальный психолог</li>
+          <li>В 2024 году окончил Московский финансово-промышленный университет «Синергия»</li>
+          <li>В работе использую инструменты когнитивно-поведенческого подхода</li>
+          <li>Консультирую онлайн и очно в Краснодаре</li>
+        </ul>
+        <div class="stats">
+          <div class="stat"><b>2024</b><span>диплом психолога</span></div>
+          <div class="stat"><b>~1 год</b><span>практики</span></div>
+          <div class="stat"><b>60-90</b><span>минут длится консультация</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="docs">
+      <div class="ph">Диплом<br><span class="tag">скан от клиента</span></div>
+      <div class="ph">Сертификат<br><span class="tag">если есть</span></div>
+      <div class="ph">Сертификат<br><span class="tag">если есть</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Формат и стоимость -->
+<section id="format">
+  <div class="wrap">
+    <h2>Формат и <em>стоимость</em></h2>
+    <div class="formats">
+      <div class="fmt">
+        <span class="chip">Онлайн</span>
+        <h3>Консультация по видеосвязи</h3>
+        <p>Из любого города, в спокойной обстановке у вас дома. 60-90 минут.</p>
+        <div class="price">— ₽ <span class="tag">уточнить цену</span></div>
+      </div>
+      <div class="fmt">
+        <span class="chip">Очно</span>
+        <h3>Встреча в Краснодаре</h3>
+        <p>Личная встреча. Адрес кабинета: <span class="tag">уточнить адрес</span> 60-90 минут.</p>
+        <div class="price">— ₽ <span class="tag">уточнить цену</span></div>
+      </div>
+      <div class="fmt">
+        <span class="chip light">Первый шаг</span>
+        <h3>Вопрос в мессенджере</h3>
+        <p>Если сомневаетесь, подойдёт ли вам консультация, напишите - разберёмся вместе.</p>
+        <div class="price" style="font-size:18px;margin-top:22px"><a class="btn" href="#contacts" data-modal style="width:100%">Задать вопрос</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Отзывы -->
+<section class="alt" id="reviews">
+  <div class="wrap">
+    <h2>Отзывы <em>клиентов</em></h2>
+    <p class="lead">Скриншоты отзывов публикуются только с согласия клиентов, без имён и личных подробностей.</p>
+    <div class="reviews">
+      <div class="ph">Скриншот отзыва<br><span class="tag">нужно от клиента</span></div>
+      <div class="ph">Видео-отзыв<br><span class="tag">если есть</span></div>
+      <div class="ph">Скриншот отзыва<br><span class="tag">нужно от клиента</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Важно -->
+<section>
+  <div class="wrap">
+    <div class="notice">
+      <h3>Важно знать до записи</h3>
+      <p>Я социальный психолог: не провожу клиническую диагностику и не занимаюсь лечением психических расстройств, зависимостей и тяжёлых депрессивных состояний. При таких трудностях рекомендую обратиться к профильному специалисту.</p>
+      <p style="margin-top:12px">Результат зависит от запроса и обстоятельств человека, поэтому я не обещаю конкретных изменений за определённое число встреч.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="alt" id="faq">
+  <div class="wrap">
+    <h2>Частые <em>вопросы</em></h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько встреч мне понадобится? <span class="plus">+</span></summary>
+        <p>Это зависит от вашего запроса и обстоятельств. Я не обещаю конкретных изменений за определённое число встреч - количество обсудим вместе на консультации.</p>
+      </details>
+      <details>
+        <summary>Как проходит онлайн-консультация? <span class="plus">+</span></summary>
+        <p>По видеосвязи, так же 60-90 минут. Нужны спокойное место, где вас никто не отвлечёт, и стабильный интернет. <span class="tag">уточнить платформу: Telegram, WhatsApp, Zoom?</span></p>
+      </details>
+      <details>
+        <summary>Чем вы можете помочь, а с чем лучше к другому специалисту? <span class="plus">+</span></summary>
+        <p>Работаю с самооценкой и уверенностью, тревожностью, эмоциональным истощением, перфекционизмом и прокрастинацией. Не занимаюсь клинической диагностикой, лечением психических расстройств, зависимостей и тяжёлых депрессивных состояний - в этих случаях подскажу обратиться к профильному специалисту.</p>
+      </details>
+      <details>
+        <summary>Что такое когнитивно-поведенческий подход? <span class="plus">+</span></summary>
+        <p>Это подход, в котором мы вместе замечаем мысли и привычные реакции, влияющие на ваше состояние, и ищем практичные способы справляться с трудностями в повседневной жизни.</p>
+      </details>
+      <details>
+        <summary>Как записаться и сколько стоит? <span class="plus">+</span></summary>
+        <p>Напишите в Telegram, WhatsApp или MAX, позвоните или оставьте заявку на сайте. Стоимость: <span class="tag">уточнить у клиента</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Запись -->
+<section id="contacts">
+  <div class="wrap cta">
+    <div>
+      <h2>Сделайте <em>первый шаг</em></h2>
+      <p>Напишите в удобный мессенджер или оставьте заявку - я свяжусь с вами и мы подберём время консультации. Онлайн или очно в Краснодаре.</p>
+      <div class="messengers">
+        <a class="msg" href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener"><i style="background:#2AABEE">TG</i><span>Telegram<small>@donmaz_nurullahovich</small></span></a>
+        <a class="msg" href="https://wa.me/79953220962" target="_blank" rel="noopener"><i style="background:#25D366">WA</i><span>WhatsApp<small>@donmaz_nurullahovich</small></span></a>
+        <a class="msg" href="https://max.ru/u/f9LHodD0cOLXTUJtXvfyx0-tKCJF2pC5kTmJlCMhf9jORn4yTAib8PZDsG4" target="_blank" rel="noopener"><i style="background:#6B4EFF">MAX</i><span>MAX<small>написать в MAX</small></span></a>
+        <a class="msg" href="tel:+79953220962"><i style="background:var(--olive)">☎</i><span>Позвонить<small>+7 995 322-09-62</small></span></a>
+      </div>
+    </div>
+    <form id="lead" novalidate>
+      <h3>Записаться на консультацию</h3>
+      <label for="f-name">Как к вам обращаться</label>
+      <input id="f-name" name="name" type="text" autocomplete="given-name" placeholder="Имя">
+      <label for="f-phone">Телефон</label>
+      <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__">
+      <label for="f-way">Где удобнее ответить</label>
+      <select id="f-way" name="way">
+        <option>Telegram</option>
+        <option>WhatsApp</option>
+        <option>MAX</option>
+        <option>Звонок</option>
+      </select>
+      <label for="f-fmt">Формат</label>
+      <select id="f-fmt" name="format">
+        <option>Онлайн</option>
+        <option>Очно в Краснодаре</option>
+        <option>Пока не знаю</option>
+      </select>
+      <button class="btn" type="submit">Отправить заявку</button>
+      <label class="agree"><input type="checkbox" checked> Согласен(на) на обработку персональных данных <span class="tag">ссылка на политику</span></label>
+      <div class="ok" id="ok">Спасибо! Это прототип - в готовом сайте заявка придёт психологу в мессенджер.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Донмаз Буглуев, социальный психолог · Краснодар<br>Реквизиты (ИП / самозанятый): <span class="tag">уточнить</span></div>
+    <div>Прототип: Ирина Бовдуй · <a href="https://vk.ru/irinaru_target_avito" target="_blank" rel="noopener">vk.ru/irinaru_target_avito</a></div>
+  </div>
+</footer>
+
+<!-- Окно записи поверх сайта -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" type="button" aria-label="Закрыть">×</button>
+    <form class="lead-form" novalidate>
+      <h3 id="m-title">Записаться на консультацию</h3>
+      <p class="intro">Оставьте контакты - я напишу вам и мы подберём удобное время</p>
+      <label for="m-name">Как к вам обращаться</label>
+      <input id="m-name" name="name" type="text" autocomplete="given-name" placeholder="Имя">
+      <label for="m-phone">Телефон</label>
+      <input id="m-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__">
+      <label for="m-way">Где удобнее ответить</label>
+      <select id="m-way" name="way">
+        <option>Telegram</option>
+        <option>WhatsApp</option>
+        <option>MAX</option>
+        <option>Звонок</option>
+      </select>
+      <label for="m-fmt">Формат</label>
+      <select id="m-fmt" name="format">
+        <option>Онлайн</option>
+        <option>Очно в Краснодаре</option>
+        <option>Пока не знаю</option>
+      </select>
+      <button class="btn" type="submit">Отправить заявку</button>
+      <label class="agree"><input type="checkbox" checked> Согласен(на) на обработку персональных данных <span class="tag">ссылка на политику</span></label>
+      <div class="ok">Спасибо! Это прототип - в готовом сайте заявка придёт психологу в мессенджер.</div>
+      <div class="quick">Или напишите сразу:
+        <a href="https://t.me/donmaz_nurullahovich" target="_blank" rel="noopener" style="background:#2AABEE">TG</a>
+        <a href="https://wa.me/79953220962" target="_blank" rel="noopener" style="background:#25D366">WA</a>
+        <a href="https://max.ru/u/f9LHodD0cOLXTUJtXvfyx0-tKCJF2pC5kTmJlCMhf9jORn4yTAib8PZDsG4" target="_blank" rel="noopener" style="background:#6B4EFF">MAX</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var header=document.querySelector('header');
+  var burger=document.querySelector('.burger');
+  var modal=document.getElementById('modal');
+  var lastFocus=null;
+
+  /* мобильное меню */
+  function closeMenu(){header.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+  burger.addEventListener('click',function(){
+    var open=header.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+
+  /* переходы по меню: плавно к разделу с учётом шапки */
+  document.querySelectorAll('nav a, .logo').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      var target=document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      closeMenu();
+      var y=target.getBoundingClientRect().top+window.pageYOffset-header.offsetHeight+1;
+      window.scrollTo({top:id==='#top'?0:y,behavior:'smooth'});
+    });
+  });
+
+  /* окно записи */
+  function openModal(){
+    lastFocus=document.activeElement;
+    closeMenu();
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('lock');
+    setTimeout(function(){document.getElementById('m-name').focus({preventScroll:true})},250);
+  }
+  function closeModal(){
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('lock');
+    if(lastFocus) lastFocus.focus({preventScroll:true});
+  }
+  document.querySelectorAll('[data-modal]').forEach(function(b){
+    b.addEventListener('click',function(e){e.preventDefault();openModal()});
+  });
+  modal.querySelector('.modal-close').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal) closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show')) closeModal()});
+
+  /* формы (прототип: только показываем «спасибо») */
+  document.querySelectorAll('form').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var ok=f.querySelector('.ok');
+      if(ok) ok.style.display='block';
+    });
+  });
+})();
+</script>
+</body>
+</html>
