@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Время гор - глэмпинг в горной Адыгее</title>
+<meta name="description" content="Сафари-тенты с отоплением и личной душевой, банный чан, спа-купель и подогреваемый бассейн у хребта Уна-Коз. Круглый год. Онлайн-бронирование.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo" aria-label="Время гор - на главную">
+    <img src="img/logo.jpg" alt="" width="40" height="40">
+    <span>Время гор</span>
+  </a>
+  <nav class="nav__links" aria-label="Разделы">
+    <a href="#tents">Шатры</a>
+    <a href="#atmo">Атмосфера</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#road">Как&nbsp;добраться</a>
+  </nav>
+  <div class="contacts" id="contacts">
+    <button type="button" class="contacts__btn" id="contactsBtn" aria-expanded="false" aria-controls="contactsPanel">Контакты <i class="ti ti-chevron-down"></i></button>
+    <div class="contacts__panel" id="contactsPanel">
+      <a href="tel:+79897561447"><span class="contacts__ico"><i class="ti ti-phone"></i></span><span><b>+7&nbsp;989&nbsp;756-14-47</b><small>Позвонить</small></span></a>
+      <a href="https://t.me/mountaintime_01" target="_blank" rel="noopener"><span class="contacts__ico"><i class="ti ti-brand-telegram"></i></span><span><b>Telegram</b><small>@mountaintime_01</small></span></a>
+      <a href="#" class="is-need" title="Нужна ссылка на MAX от владельца"><span class="contacts__ico contacts__ico--max">max</span><span><b>MAX</b><small>Нужно от&nbsp;вас: ссылка на&nbsp;чат</small></span></a>
+    </div>
+  </div>
+  <button type="button" class="btn btn--ember nav__cta" data-book>Забронировать</button>
+  <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><i class="ti ti-menu-2"></i></button>
+</header>
+
+<main id="top">
+
+<!-- ВЕЧЕР: первый экран -->
+<section class="hero">
+  <div class="hero__media">
+    <img src="img/aerial-fog.jpg" alt="Глэмпинг с высоты: шатры на лесной поляне, туман и хребет Уна-Коз">
+  </div>
+  <div class="hero__shade"></div>
+  <div class="fog" aria-hidden="true"><i class="fog__band"></i><i class="fog__band fog__band--low"></i><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="hero__inner">
+    <p class="hero__place" data-hero><i class="ti ti-map-pin"></i> Горная Адыгея · посёлок Усть-Сахрай · у&nbsp;хребта Уна-Коз</p>
+    <h1 class="hero__title"><span class="line"><span>Здесь время</span></span><span class="line"><em>течёт иначе</em></span></h1>
+    <p class="hero__lead" data-hero>Тёплые сафари-тенты с&nbsp;личной душевой, горячий банный чан на&nbsp;лесной опушке и&nbsp;звёзды над&nbsp;костровой зоной. Принимаем гостей круглый год.</p>
+
+    <form class="quickbook" id="quickbook" autocomplete="off" data-hero>
+      <label class="quickbook__field">
+        <span>Заезд</span>
+        <input type="text" id="qbIn" placeholder="Выберите дату" readonly>
+      </label>
+      <label class="quickbook__field">
+        <span>Выезд</span>
+        <input type="text" id="qbOut" placeholder="Выберите дату" readonly>
+      </label>
+      <label class="quickbook__field">
+        <span>Гостей</span>
+        <select id="qbGuests">
+          <option value="1">1 гость</option>
+          <option value="2" selected>2 гостя</option>
+          <option value="3">3 гостя</option>
+          <option value="4">4 гостя</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn--ember quickbook__go">Проверить даты <i class="ti ti-arrow-right"></i></button>
+    </form>
+
+    <ul class="hero__facts" data-hero>
+      <li><strong>5,0</strong> на&nbsp;Яндекс Картах · 146 оценок</li>
+      <li><strong>Круглый год</strong> - тенты проверены морозом -17&nbsp;°C</li>
+      <li><strong>от&nbsp;6&nbsp;000&nbsp;₽</strong> за&nbsp;сутки в&nbsp;шатре</li>
+    </ul>
+  </div>
+</section>
+
+<!-- УТРО: интро -->
+<section class="intro light">
+  <div class="wrap intro__grid">
+    <div class="intro__text" data-reveal>
+      <h2 class="display">Пространство без&nbsp;рамок и&nbsp;ограничений</h2>
+      <p class="lead">Утро начинается с&nbsp;кофе на&nbsp;террасе шатра: напротив - хребет Уна-Коз, внизу - туман над&nbsp;лугом, рядом - только птицы. Город остаётся где-то за&nbsp;перевалом.</p>
+      <p>«Время гор» - небольшой глэмпинг в&nbsp;Майкопском районе. Шатры стоят на&nbsp;комфортном удалении друг от&nbsp;друга, у&nbsp;каждого - своя терраса с&nbsp;подвесным креслом и&nbsp;гамак. Хозяин глэмпинга, Илья, всегда рядом, на&nbsp;территории.</p>
+      <a href="#tents" class="link-arrow">Выбрать шатёр <i class="ti ti-arrow-down-right"></i></a>
+    </div>
+    <div class="intro__photos">
+      <figure data-img class="intro__photo intro__photo--b"><img src="img/terrace-coffee.jpg" alt="Две чашки кофе на террасе с видом на хребет" loading="lazy"></figure>
+      <figure data-img class="intro__photo intro__photo--a"><img src="img/meadow-dawn.jpg" alt="Рассвет и туман над лугом у глэмпинга" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ДЕНЬ: шатры -->
+<section class="tents light" id="tents">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2 class="display">Два вида шатров.<br>Оба - с&nbsp;комфортом отеля</h2>
+      <p>Тёплый пол, обогреватели и&nbsp;зимняя подстёжка: в&nbsp;шатре уютно и&nbsp;в&nbsp;июле, и&nbsp;в&nbsp;январе. Бельё и&nbsp;полотенца - белоснежные, кофе-станция и&nbsp;холодильник уже&nbsp;внутри.</p>
+    </div>
+
+    <article class="tent" data-tent="big">
+      <div class="tent__gallery" data-img>
+        <img class="tent__main" src="img/tent-big.jpg" alt="Большой сафари-тент: кровать и панорамное окно в лес" loading="lazy">
+        <div class="tent__thumbs">
+          <button type="button" class="is-active" data-src="img/tent-big.jpg" aria-label="Фото 1"><img src="img/tent-big.jpg" alt="" loading="lazy"></button>
+          <button type="button" data-src="img/tent-big-sofa.jpg" aria-label="Фото 2"><img src="img/tent-big-sofa.jpg" alt="" loading="lazy"></button>
+          <button type="button" data-src="img/hero.jpg" aria-label="Фото 3"><img src="img/hero.jpg" alt="" loading="lazy"></button>
+          <button type="button" data-src="img/tent-night-warm.jpg" aria-label="Фото 4"><img src="img/tent-night-warm.jpg" alt="" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="tent__body" data-reveal>
+        <h3>Большой сафари-тент</h3>
+        <p class="tent__sub">Для&nbsp;семьи или&nbsp;компании друзей</p>
+        <dl class="tent__specs">
+          <div><dt>Площадь</dt><dd>24 м²</dd></div>
+          <div><dt>Гостей</dt><dd>до&nbsp;4</dd></div>
+          <div><dt>Спальные места</dt><dd>кровать 180 × 200 и&nbsp;диван 140 × 200</dd></div>
+        </dl>
+        <ul class="amen">
+          <li class="amen__wide"><i class="ti ti-bath"></i>Личная душевая комната на&nbsp;ключ: душ, санузел, раковина, фен</li>
+          <li><i class="ti ti-coffee"></i>Кофе-станция и&nbsp;чайник</li>
+          <li><i class="ti ti-fridge"></i>Мини-холодильник и&nbsp;посуда</li>
+          <li><i class="ti ti-temperature-sun"></i>Тёплый пол и&nbsp;обогреватель</li>
+          <li><i class="ti ti-armchair"></i>Терраса, подвесное кресло, гамак</li>
+        </ul>
+        <div class="tent__price">
+          <p><span class="price">8&nbsp;000&nbsp;₽</span> за&nbsp;сутки</p>
+          <p class="price-note">7&nbsp;000&nbsp;₽ за&nbsp;сутки при&nbsp;проживании от&nbsp;трёх ночей</p>
+        </div>
+        <button type="button" class="btn btn--dark" data-pick="big">Забронировать этот&nbsp;шатёр</button>
+      </div>
+    </article>
+
+    <article class="tent tent--flip" data-tent="small">
+      <div class="tent__gallery" data-img>
+        <img class="tent__main" src="img/tent-small-2.jpg" alt="Малый сафари-тент: двуспальная кровать" loading="lazy">
+        <div class="tent__thumbs">
+          <button type="button" class="is-active" data-src="img/tent-small-2.jpg" aria-label="Фото 1"><img src="img/tent-small-2.jpg" alt="" loading="lazy"></button>
+          <button type="button" data-src="img/tent-small.jpg" aria-label="Фото 2"><img src="img/tent-small.jpg" alt="" loading="lazy"></button>
+          <button type="button" data-src="img/tent-small-3.jpg" aria-label="Фото 3"><img src="img/tent-small-3.jpg" alt="" loading="lazy"></button>
+          <button type="button" data-src="img/tent-night.jpg" aria-label="Фото 4"><img src="img/tent-night.jpg" alt="" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="tent__body" data-reveal>
+        <h3>Малый сафари-тент</h3>
+        <p class="tent__sub">Для&nbsp;пары или&nbsp;пары с&nbsp;ребёнком</p>
+        <dl class="tent__specs">
+          <div><dt>Площадь</dt><dd>16 м²</dd></div>
+          <div><dt>Гостей</dt><dd>до&nbsp;3</dd></div>
+          <div><dt>Спальные места</dt><dd>кровать 180 × 200 и&nbsp;кровать 90 × 200</dd></div>
+        </dl>
+        <ul class="amen">
+          <li class="amen__wide"><i class="ti ti-bath"></i>Личная душевая комната на&nbsp;ключ: душ, санузел, раковина, фен</li>
+          <li><i class="ti ti-coffee"></i>Кофе-станция и&nbsp;чайник</li>
+          <li><i class="ti ti-fridge"></i>Мини-холодильник и&nbsp;посуда</li>
+          <li><i class="ti ti-flame"></i>Отопление, работает круглый год</li>
+          <li><i class="ti ti-armchair"></i>Терраса с&nbsp;видом на&nbsp;горы</li>
+        </ul>
+        <div class="tent__price">
+          <p><span class="price">6&nbsp;000&nbsp;₽</span> за&nbsp;сутки</p>
+          <p class="price-note">Цены с&nbsp;Яндекс Карт - уточним актуальные у&nbsp;владельца</p>
+        </div>
+        <button type="button" class="btn btn--dark" data-pick="small">Забронировать этот&nbsp;шатёр</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ДЕНЬ → ВЕЧЕР → НОЧЬ: что делать -->
+<section class="day" id="day">
+  <div class="wrap">
+    <div class="section-head section-head--dark" data-reveal>
+      <h2 class="display">Один день в&nbsp;горах</h2>
+      <p>Можно ничего не&nbsp;планировать: всё для&nbsp;отдыха - на&nbsp;территории. А&nbsp;если&nbsp;захочется приключений, организуем выезд к&nbsp;водопадам или&nbsp;сплав по&nbsp;Белой.</p>
+    </div>
+
+    <div class="trail-wrap">
+    <svg class="trail" id="trail" aria-hidden="true"><path class="trail__base" id="trailBase"/><path class="trail__line" id="trailLine"/><circle class="trail__glow" id="trailGlow" r="14"/><circle class="trail__dot" id="trailDot" r="4.5"/></svg>
+    <ol class="timeline">
+      <li class="moment">
+        <figure data-img><img src="img/pool.jpg" alt="Подогреваемый бассейн с шезлонгами под навесом" loading="lazy"></figure>
+        <span class="moment__node" aria-hidden="true"></span>
+        <div class="moment__text" data-reveal>
+          <h3>Подогреваемый бассейн</h3>
+          <p>Тёплая свежая вода даже в&nbsp;прохладный день. Шезлонги под&nbsp;деревянным навесом, вокруг - луг и&nbsp;лес.</p>
+          <span class="tag">Входит в&nbsp;проживание</span>
+        </div>
+      </li>
+      <li class="moment">
+        <figure data-img><img src="img/chan.jpg" alt="Банный чан на лесной опушке с гирляндами" loading="lazy"></figure>
+        <span class="moment__node" aria-hidden="true"></span>
+        <div class="moment__text" data-reveal>
+          <h3>Банный чан на&nbsp;лесной опушке</h3>
+          <p>Большой чан до&nbsp;6 человек: травяной сбор, ароматные веники, своя костровая зона рядом. Вечером над&nbsp;ним загораются гирлянды.</p>
+          <span class="tag">6&nbsp;000&nbsp;₽ за&nbsp;сеанс</span>
+        </div>
+      </li>
+      <li class="moment">
+        <figure data-img><img src="img/evening-glasses.jpg" alt="Бокалы и свеча на террасе на фоне гор в сумерках" loading="lazy"></figure>
+        <span class="moment__node" aria-hidden="true"></span>
+        <div class="moment__text" data-reveal>
+          <h3>Спа-купель прямо на&nbsp;террасе</h3>
+          <p>Гидромассажная купель до&nbsp;4 взрослых, вода нагревается до&nbsp;40&nbsp;°C. Готовим заранее и&nbsp;ставим у&nbsp;вашего шатра: вышли из&nbsp;домика - и&nbsp;уже&nbsp;в&nbsp;тёплой воде с&nbsp;видом на&nbsp;горы.</p>
+          <span class="tag">6&nbsp;000&nbsp;₽ за&nbsp;сутки</span>
+        </div>
+      </li>
+      <li class="moment">
+        <figure data-img><img src="img/kitchen-fireplace.jpg" alt="Кухня-гостиная с камином и панорамными окнами" loading="lazy"></figure>
+        <span class="moment__node" aria-hidden="true"></span>
+        <div class="moment__text" data-reveal>
+          <h3>Кухня-гостиная с&nbsp;камином</h3>
+          <p>Общая кухня со&nbsp;всей техникой: плита, духовка, посудомойка, микроволновка. После&nbsp;ужина - настольные игры, кино на&nbsp;проекторе или&nbsp;разговоры у&nbsp;камина.</p>
+          <span class="tag">Входит в&nbsp;проживание</span>
+        </div>
+      </li>
+      <li class="moment">
+        <figure data-img><img src="img/fire-night.jpg" alt="Костёр в костровой зоне ночью" loading="lazy"></figure>
+        <span class="moment__node" aria-hidden="true"></span>
+        <div class="moment__text" data-reveal>
+          <h3>Костёр и&nbsp;звёзды</h3>
+          <p>Круглая костровая зона с&nbsp;качелями. Пледы, треск дров и&nbsp;небо, на&nbsp;котором видно столько звёзд, сколько в&nbsp;городе не&nbsp;увидишь никогда.</p>
+          <span class="tag">Входит в&nbsp;проживание</span>
+        </div>
+      </li>
+    </ol>
+    </div>
+
+    <div class="adventures" data-reveal>
+      <h3>Приключения рядом - организуем</h3>
+      <ul>
+        <li><i class="ti ti-horse"></i>Конные прогулки</li>
+        <li><i class="ti ti-ripple"></i>Рафтинг по&nbsp;горной реке</li>
+        <li><i class="ti ti-car-suv"></i>Джипинг к&nbsp;водопадам</li>
+        <li><i class="ti ti-motorbike"></i>Аренда питбайков</li>
+        <li><i class="ti ti-route"></i>Пешие маршруты</li>
+        <li><i class="ti ti-map-2"></i>Экскурсии с&nbsp;гидом</li>
+      </ul>
+      <p class="need need--dark">Нужно от&nbsp;вас: цены и&nbsp;продолжительность активностей</p>
+    </div>
+  </div>
+</section>
+
+<!-- Атмосфера: видео и фото территории -->
+<section class="atmo" id="atmo">
+  <div class="wrap">
+    <div class="section-head section-head--dark" data-reveal>
+      <h2 class="display">Почувствуйте<br><em>атмосферу</em></h2>
+      <p>Пар над&nbsp;тёплым бассейном в&nbsp;ночи, гирлянды над&nbsp;банным чаном, закат над&nbsp;костровой зоной. Так&nbsp;выглядит обычный вечер в&nbsp;«Времени гор».</p>
+    </div>
+
+    <div class="reels">
+      <button type="button" class="reel" data-lb="video/pool-night.mp4" data-cap="Подогреваемый бассейн ночью" data-reveal>
+        <video src="video/pool-night.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="reel__cap"><i class="ti ti-player-play-filled"></i>Бассейн ночью</span>
+      </button>
+      <button type="button" class="reel" data-lb="video/kupel.mp4" data-cap="Спа-купель на террасе шатра" data-reveal>
+        <video src="video/kupel.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="reel__cap"><i class="ti ti-player-play-filled"></i>Купель на&nbsp;террасе</span>
+      </button>
+      <button type="button" class="reel reel--tall" data-lb="video/sunset-fire.mp4" data-cap="Закат над костровой зоной" data-reveal>
+        <video src="video/sunset-fire.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="reel__cap"><i class="ti ti-player-play-filled"></i>Закат у&nbsp;костра</span>
+      </button>
+      <button type="button" class="reel" data-lb="video/tent-forest.mp4" data-cap="Шатёр в лесу" data-reveal>
+        <video src="video/tent-forest.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="reel__cap"><i class="ti ti-player-play-filled"></i>Шатёр в&nbsp;лесу</span>
+      </button>
+      <button type="button" class="reel" data-lb="video/winter-night.mp4" data-cap="Зимняя ночь: шатры в снегу" data-reveal>
+        <video src="video/winter-night.mp4" muted loop playsinline preload="metadata"></video>
+        <span class="reel__cap"><i class="ti ti-player-play-filled"></i>Зимняя ночь</span>
+      </button>
+    </div>
+
+    <div class="mosaic">
+      <button type="button" class="tile tile--a" data-lb="img/chan.jpg" data-cap="Банный чан на лесной опушке" data-img><img src="img/chan.jpg" alt="Банный чан с гирляндами вечером" loading="lazy"><span>Банный чан вечером</span></button>
+      <button type="button" class="tile tile--b" data-lb="img/hero.jpg" data-cap="Терраса шатра с подвесным креслом" data-img><img src="img/hero.jpg" alt="Подсвеченная терраса шатра с подвесным креслом" loading="lazy"><span>Терраса шатра</span></button>
+      <button type="button" class="tile tile--c" data-lb="img/fire-night.jpg" data-cap="Костёр в костровой зоне" data-img><img src="img/fire-night.jpg" alt="Костёр ночью" loading="lazy"><span>Костровая зона</span></button>
+      <button type="button" class="tile tile--d" data-lb="img/aerial.jpg" data-cap="Территория глэмпинга с высоты" data-img><img src="img/aerial.jpg" alt="Шатры на поляне, вид с дрона" loading="lazy"><span>Территория с&nbsp;высоты</span></button>
+      <button type="button" class="tile tile--e" data-lb="img/tent-night.jpg" data-cap="Шатёр ночью" data-img><img src="img/tent-night.jpg" alt="Освещённый шатёр ночью" loading="lazy"><span>Шатёр ночью</span></button>
+      <button type="button" class="tile tile--f" data-lb="img/mangal.jpg" data-cap="Мангальная зона у домика" data-img><img src="img/mangal.jpg" alt="Мангал у домика" loading="lazy"><span>Мангал у&nbsp;домика</span></button>
+      <button type="button" class="tile tile--g" data-lb="img/garland-path.jpg" data-cap="Тропинка с гирляндами" data-img><img src="img/garland-path.jpg" alt="Лесная тропинка с гирляндами вечером" loading="lazy"><span>Вечерняя тропинка</span></button>
+      <button type="button" class="tile tile--h" data-lb="img/fire-zone-2.jpg" data-cap="Костровая зона и луг" data-img><img src="img/fire-zone-2.jpg" alt="Круглая костровая зона на лугу" loading="lazy"><span>Костровая зона днём</span></button>
+      <button type="button" class="tile tile--i" data-lb="img/tents-evening.jpg" data-cap="Шатры вечером" data-img><img src="img/tents-evening.jpg" alt="Шатры в вечерних огнях" loading="lazy"><span>Шатры вечером</span></button>
+    </div>
+    <p class="need need--dark">Фото и&nbsp;видео - из&nbsp;Telegram-канала и&nbsp;Яндекс Карт. Для&nbsp;сайта нужны оригиналы в&nbsp;хорошем качестве и&nbsp;горизонтальное видео для&nbsp;первого экрана.</p>
+  </div>
+</section>
+
+<!-- Окрестности -->
+<section class="around" id="around">
+  <div class="around__hero">
+    <img src="img/mountains-dusk.jpg" alt="Горный хребет в лучах заходящего солнца" loading="lazy">
+    <h2 class="display" data-reveal>Горная Адыгея<br><em>на&nbsp;расстоянии прогулки</em></h2>
+  </div>
+  <div class="wrap around__grid">
+    <figure data-img class="place place--tall">
+      <img src="img/lagonaki.jpg" alt="Альпийские луга плато Лаго-Наки" loading="lazy">
+      <figcaption><h3>Плато Лаго-Наки</h3><p>Панорамы горных хребтов и&nbsp;бескрайние альпийские луга. Зимой - снег, летом - цветы.</p></figcaption>
+    </figure>
+    <figure data-img class="place">
+      <img src="img/gorge.jpg" alt="Река Белая в Хаджохской теснине" loading="lazy">
+      <figcaption><h3>Хаджохская теснина</h3><p>Река Белая в&nbsp;узком каменном каньоне.</p></figcaption>
+    </figure>
+    <figure data-img class="place">
+      <img src="img/waterfall.jpg" alt="Водопад в лесу" loading="lazy">
+      <figcaption><h3>Водопады</h3><p>Купальный сезон в&nbsp;горных реках открываем уже&nbsp;в&nbsp;апреле.</p></figcaption>
+    </figure>
+    <figure data-img class="place place--wide">
+      <img src="img/plateau.jpg" alt="Скалистый хребет над лесом" loading="lazy">
+      <figcaption><h3>Кордон Гузерипль и&nbsp;хребет Уна-Коз</h3><p>Музей Кавказского заповедника, реликтовый лес, а&nbsp;в&nbsp;сентябре на&nbsp;Даховской поляне - Фестиваль адыгейского сыра.</p></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Отзывы -->
+<section class="reviews light" id="reviews">
+  <div class="wrap">
+    <div class="reviews__head" data-reveal>
+      <h2 class="display">«Уезжать совершенно не&nbsp;хотелось»</h2>
+      <div class="rating">
+        <span class="rating__num">5,0</span>
+        <span class="rating__stars" aria-label="5 из 5"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></span>
+        <span class="rating__src">146 оценок на&nbsp;Яндекс Картах</span>
+      </div>
+    </div>
+    <div class="quotes">
+      <blockquote data-reveal>
+        <p>Вокруг тишина, домики находятся на&nbsp;комфортном удалении друг от&nbsp;друга, соседи не&nbsp;мешают. Очень понравилась купель под&nbsp;открытым небом. Сидеть в&nbsp;горячей воде, когда&nbsp;вокруг шумит лес, - непередаваемые ощущения.</p>
+        <footer>Дмитрий В.&nbsp;· Яндекс Карты</footer>
+      </blockquote>
+      <blockquote data-reveal>
+        <p>Постельное бельё и&nbsp;полотенца - новые, белоснежные. Бассейн чистый, с&nbsp;тёплой свежей водой - особенно порадовало при&nbsp;погоде в&nbsp;15&nbsp;°C! Владелец всегда находился на&nbsp;территории - вежливый и&nbsp;внимательный.</p>
+        <footer>Нелли&nbsp;· Яндекс Карты</footer>
+      </blockquote>
+      <blockquote data-reveal>
+        <p>Очень красивые виды на&nbsp;горы с&nbsp;террасы домика. Вечером, когда&nbsp;темнеет, атмосфера становится ещё&nbsp;лучше. Даже не&nbsp;хотелось уезжать. Планируем посетить это&nbsp;место ещё&nbsp;раз следующим летом.</p>
+        <footer>Максим Коротков&nbsp;· Яндекс Карты</footer>
+      </blockquote>
+      <blockquote data-reveal>
+        <p>Домики очень тёплые! На&nbsp;улице было -10, но&nbsp;ночью было даже жарко. Особую радость вызвал тот&nbsp;факт, что&nbsp;место очень уединённое, тихое, спокойное. Хозяин Илья всегда на&nbsp;месте.</p>
+        <footer>Маргарита В.&nbsp;· Яндекс Карты</footer>
+      </blockquote>
+      <blockquote data-reveal>
+        <p>Провели неделю здесь с&nbsp;мужем и&nbsp;собакой. Просто замечательное место! Костровая зона с&nbsp;качелями, где&nbsp;вечером собирались все&nbsp;жильцы и&nbsp;болтали. Хозяин Илья дружелюбный и&nbsp;очень гостеприимный.</p>
+        <footer>Рони Р.&nbsp;· Яндекс Карты</footer>
+      </blockquote>
+      <blockquote data-reveal>
+        <p>Илья организовал нам незабываемый джипинг на&nbsp;водопады, плато Лагонаки и&nbsp;рафтинг по&nbsp;реке Белая. Это&nbsp;идеальное место для&nbsp;тех, кто&nbsp;хочет насладиться природой, не&nbsp;жертвуя комфортом. Чан в&nbsp;лесу - это&nbsp;круто!</p>
+        <footer>Наталья Харичкина&nbsp;· Яндекс Карты</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Бронирование: баннер, сама форма - в окне -->
+<section class="booking" id="booking">
+  <div class="booking__bg"><img src="img/garland-path.jpg" alt="" loading="lazy"></div>
+  <canvas class="embers embers--band" aria-hidden="true"></canvas>
+  <div class="wrap booking__band" data-reveal>
+    <h2 class="display">Забронируйте<br><em>своё время гор</em></h2>
+    <p>Выберите даты и&nbsp;шатёр - стоимость посчитается сразу. После&nbsp;заявки мы&nbsp;свяжемся с&nbsp;вами и&nbsp;подтвердим бронь.</p>
+    <button type="button" class="btn btn--ember btn--big" data-book>Забронировать <i class="ti ti-arrow-right"></i></button>
+  </div>
+</section>
+
+<!-- Вопросы -->
+<section class="faq light" id="faq">
+  <div class="wrap faq__grid">
+    <h2 class="display" data-reveal>Частые вопросы</h2>
+    <div class="faq__list" data-reveal>
+      <details open>
+        <summary>Не&nbsp;холодно&nbsp;ли в&nbsp;шатре зимой?</summary>
+        <p>Нет.&nbsp;В&nbsp;каждом тенте мощные конвекторы, тёплый пол и&nbsp;зимняя подстёжка - «шуба». Шатры проверены морозом -17&nbsp;°C, глэмпинг работает круглый год.</p>
+      </details>
+      <details>
+        <summary>Можно приехать с&nbsp;собакой или&nbsp;кошкой?</summary>
+        <p>Да,&nbsp;с&nbsp;питомцами можно. Территория просторная, есть где&nbsp;гулять. Просим только соблюдать тишину - это&nbsp;касается и&nbsp;хвостатых гостей.</p>
+      </details>
+      <details>
+        <summary>Где&nbsp;душ и&nbsp;туалет?</summary>
+        <p>В&nbsp;отдельном домике удобств у&nbsp;каждого шатра своя комната на&nbsp;ключ: душевая кабина, санузел, раковина, фен и&nbsp;банные принадлежности.</p>
+      </details>
+      <details>
+        <summary>Как&nbsp;с&nbsp;едой?</summary>
+        <p>На&nbsp;территории общая кухня со&nbsp;всей техникой и&nbsp;посудой, есть мангальная зона. Магазин далеко, поэтому продукты лучше привезти с&nbsp;собой.</p>
+      </details>
+      <details>
+        <summary>Есть&nbsp;ли интернет?</summary>
+        <p>Связь в&nbsp;горах нестабильная: интернет то&nbsp;есть, то&nbsp;нет.&nbsp;Гости пишут, что&nbsp;через&nbsp;день перестают это&nbsp;замечать.</p>
+      </details>
+      <details>
+        <summary>Какие правила на&nbsp;территории?</summary>
+        <p>Тишина и&nbsp;музыка на&nbsp;минимуме, в&nbsp;шатёр - без&nbsp;уличной обуви, не&nbsp;курить в&nbsp;тентах и&nbsp;туалетах. Мусор - в&nbsp;баки у&nbsp;каждого тента.</p>
+      </details>
+      <details>
+        <summary>Во&nbsp;сколько заезд и&nbsp;выезд? Как&nbsp;отменить бронь?</summary>
+        <p class="need">Нужно от&nbsp;вас: время заезда и&nbsp;выезда, условия предоплаты и&nbsp;отмены.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Как добраться -->
+<section class="road" id="road">
+  <div class="wrap road__grid">
+    <div data-reveal>
+      <h2 class="display">Как&nbsp;добраться</h2>
+      <p class="road__addr">Республика Адыгея, Майкопский район,<br>посёлок Усть-Сахрай, улица Мира</p>
+      <p class="need need--dark">Нужно от&nbsp;вас: время в&nbsp;пути от&nbsp;Майкопа и&nbsp;Краснодара, ориентиры на&nbsp;последнем участке дороги</p>
+      <div class="road__btns">
+        <a class="btn btn--ember" href="https://yandex.ru/maps/org/189997695506/" target="_blank" rel="noopener"><i class="ti ti-route"></i> Построить маршрут</a>
+        <a class="btn btn--ghost" href="tel:+79897561447"><i class="ti ti-phone"></i> Позвонить</a>
+      </div>
+    </div>
+    <div class="road__map" id="roadMap">
+      <a class="road__static" href="https://yandex.ru/maps/org/189997695506/" target="_blank" rel="noopener" aria-label="Открыть глэмпинг на Яндекс Картах">
+        <img src="img/map.png" alt="Карта: глэмпинг «Время гор» у посёлка Усть-Сахрай, рядом станица Даховская" loading="lazy">
+        <span class="road__pin"><i class="ti ti-tent"></i>Время гор · Усть-Сахрай</span>
+      </a>
+      <button type="button" class="road__live" id="mapLive"><i class="ti ti-map-2"></i> Интерактивная карта</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <img src="img/logo.jpg" alt="" width="56" height="56">
+      <p class="foot__slogan">Время отдыхать.<br><em>Время гор.</em></p>
+    </div>
+    <div>
+      <p><a href="tel:+79897561447">+7&nbsp;989&nbsp;756-14-47</a></p>
+      <p><a href="https://t.me/mountaintime_01" target="_blank" rel="noopener">Telegram: @mountaintime_01</a></p>
+    </div>
+    <div>
+      <p><a href="https://t.me/mountain_time" target="_blank" rel="noopener">Канал в&nbsp;Telegram</a></p>
+      <p><a href="https://vk.com/mountaintime01" target="_blank" rel="noopener">Сообщество ВКонтакте</a></p>
+    </div>
+  </div>
+  <div class="wrap foot__note">
+    <p>Прототип сайта. Тексты и&nbsp;цены - из&nbsp;Telegram-канала и&nbsp;Яндекс Карт глэмпинга, фото - оттуда&nbsp;же, для&nbsp;финальной версии нужны оригиналы.</p>
+    <p>Прототип: Ирина Бовдуй, 2026</p>
+  </div>
+</footer>
+
+<dialog class="modal" id="bookModal" aria-labelledby="bookTitle">
+  <div class="modal__box">
+    <button type="button" class="modal__close" id="bookClose" aria-label="Закрыть"><i class="ti ti-x"></i></button>
+    <div class="modal__head">
+      <h2 id="bookTitle">Бронирование</h2>
+      <p class="need">Здесь подключится сервис онлайн-бронирования с&nbsp;реальной занятостью и&nbsp;оплатой. Сейчас занятые даты - для&nbsp;примера.</p>
+    </div>
+    <form class="bk" id="bk" novalidate>
+      <div class="bk__step">
+        <div class="bk__label">1. Даты</div>
+        <div class="cal" id="cal">
+          <div class="cal__bar">
+            <button type="button" class="cal__nav" id="calPrev" aria-label="Предыдущий месяц"><i class="ti ti-chevron-left"></i></button>
+            <div class="cal__months" id="calMonths"></div>
+            <button type="button" class="cal__nav" id="calNext" aria-label="Следующий месяц"><i class="ti ti-chevron-right"></i></button>
+          </div>
+          <div class="cal__grid" id="calGrid"></div>
+          <div class="cal__legend"><span><i class="dot dot--busy"></i>занято</span><span><i class="dot dot--sel"></i>ваши даты</span></div>
+        </div>
+        <p class="bk__dates" id="bkDates">Выберите дату заезда</p>
+      </div>
+
+      <div class="bk__step">
+        <div class="bk__label">2. Шатёр</div>
+        <div class="bk__tents">
+          <label class="choice">
+            <input type="radio" name="tent" value="big" checked>
+            <span class="choice__card">
+              <img src="img/tent-big.jpg" alt="" loading="lazy">
+              <span><strong>Большой</strong><small>24 м² · до&nbsp;4 гостей</small><b>8&nbsp;000&nbsp;₽ / сутки</b></span>
+            </span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="tent" value="small">
+            <span class="choice__card">
+              <img src="img/tent-small-2.jpg" alt="" loading="lazy">
+              <span><strong>Малый</strong><small>16 м² · до&nbsp;3 гостей</small><b>6&nbsp;000&nbsp;₽ / сутки</b></span>
+            </span>
+          </label>
+        </div>
+        <div class="bk__guests">
+          <span>Гостей</span>
+          <div class="stepper">
+            <button type="button" id="gMinus" aria-label="Меньше гостей"><i class="ti ti-minus"></i></button>
+            <output id="gCount">2</output>
+            <button type="button" id="gPlus" aria-label="Больше гостей"><i class="ti ti-plus"></i></button>
+          </div>
+          <label class="pet"><input type="checkbox" id="pet"> Едем с&nbsp;питомцем</label>
+        </div>
+      </div>
+
+      <div class="bk__step">
+        <div class="bk__label">3. Дополнительно</div>
+        <label class="extra"><input type="checkbox" name="extra" value="chan" data-price="6000" data-unit="session"><span><strong>Банный чан</strong> до&nbsp;6 человек, травы и&nbsp;веники</span><b>6&nbsp;000&nbsp;₽ / сеанс</b></label>
+        <label class="extra"><input type="checkbox" name="extra" value="spa" data-price="6000" data-unit="day"><span><strong>Спа-купель на&nbsp;террасе</strong> до&nbsp;4 взрослых, 40&nbsp;°C</span><b>6&nbsp;000&nbsp;₽ / сутки</b></label>
+        <label class="extra"><input type="checkbox" name="extra" value="tour" data-price="0" data-unit="ask"><span><strong>Приключение</strong> конная прогулка, рафтинг или&nbsp;джипинг</span><b>по&nbsp;запросу</b></label>
+      </div>
+
+      <div class="bk__step">
+        <div class="bk__label">4. Контакты</div>
+        <div class="bk__contacts">
+          <label class="field"><span>Имя</span><input type="text" id="cName" autocomplete="name" placeholder="Как к вам обращаться"></label>
+          <label class="field"><span>Телефон</span><input type="tel" id="cPhone" autocomplete="tel" placeholder="+7 900 000-00-00"></label>
+        </div>
+      </div>
+
+      <div class="bk__sum">
+        <div class="bk__lines" id="bkLines"><p>Выберите даты, чтобы&nbsp;увидеть стоимость</p></div>
+        <div class="bk__total"><span>Итого</span><strong id="bkTotal">-</strong></div>
+        <p class="bk__err" id="bkErr" role="alert"></p>
+        <button type="submit" class="btn btn--ember btn--wide">Отправить бронь</button>
+        <p class="bk__fine">Оплата - после&nbsp;подтверждения. Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;политикой конфиденциальности.</p>
+      </div>
+    </form>
+
+    <div class="bk-done" id="bkDone" hidden>
+      <i class="ti ti-tent"></i>
+      <h3>Бронь отправлена</h3>
+      <p id="bkDoneText"></p>
+      <p class="need need--dark">Демо: в&nbsp;рабочей версии здесь будет оплата и&nbsp;подтверждение от&nbsp;сервиса бронирования.</p>
+      <button type="button" class="btn btn--ghost" id="bkAgain">Выбрать другие даты</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="lb" id="lb" aria-label="Просмотр">
+  <button type="button" class="lb__close" id="lbClose" aria-label="Закрыть"><i class="ti ti-x"></i></button>
+  <button type="button" class="lb__nav lb__nav--prev" id="lbPrev" aria-label="Назад"><i class="ti ti-chevron-left"></i></button>
+  <figure class="lb__stage" id="lbStage"></figure>
+  <button type="button" class="lb__nav lb__nav--next" id="lbNext" aria-label="Вперёд"><i class="ti ti-chevron-right"></i></button>
+</dialog>
+
+<button type="button" class="mob-cta btn btn--ember" data-book>Забронировать</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
